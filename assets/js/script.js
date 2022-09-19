@@ -2,7 +2,15 @@
 let questionNumberHTML = document.getElementById("question-num");
 questionNumberHTML.innerHTML = "Question: 2/10";
 
-console.log(questionNumberHTML);
+/*Display Question */
+
+let questionTextHTML = document.getElementById("text");
+questionTextHTML.innerHTML = "This is to test that JS is talking to the question container";
+
+
+
+
+console.log(questionTextHTML);
 
 const state = {
     questionNumber: 1, 
@@ -23,7 +31,7 @@ const state = {
 
 
 
-/*Display Question */
+
 
 
 
