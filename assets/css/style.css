@@ -49,6 +49,10 @@ h2 {
     padding: 2vw;
 }
 
+#score {
+    visibility: hidden;
+}
+
 #text-display {
     margin: 0 5vw 5vh 5vw;
     padding: .5rem 1rem;
