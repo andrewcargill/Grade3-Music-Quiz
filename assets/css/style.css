@@ -1,4 +1,42 @@
 body {
-    background-color: aqua;
-    height: 100px;
+    background-color: lightgray;
+}
+
+#game-container {
+    background-color: beige;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#scores {
+    text-align: center;
+    background-color: bisque;
+}
+
+#text-display {
+    background-color: blanchedalmond;
+}
+
+#true-false-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
+
+.t-f-button {
+    text-align: center;
+    height: 30vw;
+    width: 30vw;
+    margin: 5vw;
+}
+
+#true {
+    background-color: aliceblue;
+}
+
+#false {
+    background-color: lightcyan;
 }
