@@ -8,16 +8,26 @@ body {
 }
 
 #game-container {
-    margin: 5vw 5vw;
+    margin: 5vh 5vw;
     background-color: beige;
+    max-width: 800px;
 }
 
 header {
     margin: 2vh 5vw 6vh 5vw;
+    padding: .5rem 1rem;
 }
 
 h1, h2 {
     text-align: center;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 15px;
 }
 
 #scores {
@@ -29,7 +39,7 @@ h1, h2 {
 
 #text-display {
     margin: 0 5vw 5vh 5vw;
-    padding: ;
+    padding: .5rem 1rem;
     background-color: lightcoral;
     min-height: 100px;
 }
@@ -47,7 +57,7 @@ h1, h2 {
     max-height: 300px;
     width: 30vw;
     max-width: 300px;
-    margin: 5vw;
+    margin: 0 5vw 3vh 5vw;
 }
 
 #true {
