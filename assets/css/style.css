@@ -1,3 +1,5 @@
+button { cursor: pointer; }
+
 body {
     display: flex;
     align-items: center;

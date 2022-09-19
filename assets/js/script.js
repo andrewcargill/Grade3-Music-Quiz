@@ -2,7 +2,7 @@
 
 /*Question number HTML container*/
 let questionNumberHTML = document.getElementById("question-num");
-questionNumberHTML.innerHTML = "Question: 2/10";
+questionNumberHTML.innerHTML = "Question:";
 
 /*Display Question */
 let questionTextHTML = document.getElementById("text");
@@ -11,17 +11,11 @@ questionTextHTML.innerHTML = "This is to test that JS is talking to the question
 //Button event listeners
 let buttonTrue = document.getElementById("true");
 buttonTrue.addEventListener("click", function() {
-    console.log(buttonTrue);
 });
 
 let buttonFalse = document.getElementById("false");
 buttonFalse.addEventListener("click", function() {
-    console.log(buttonFalse);
 });
-
-
-
-console.log(questionTextHTML);
 
 const state = {
     questionNumber: 1, 
@@ -40,14 +34,6 @@ const state = {
     ]
 }
 
+console.log(state.questionNumber);
 
-
-
-
-
-
-/*Listen to True Button*/
-
-
-/*Listen to False Button*/
 
