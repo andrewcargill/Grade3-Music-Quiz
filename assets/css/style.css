@@ -1,20 +1,24 @@
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: lightgray;
 }
 
+
 .border {
-    border: 3px solid red;
     border-radius: 10px;
+    border: 2px solid red;
+    background-color: #DEE1E7;
 }
 
 #game-container {
     margin: 5vh 5vw;
-    background-color: beige;
     max-width: 800px;
 }
 
 header {
-    margin: 2vh 5vw 6vh 5vw;
+    margin: 3vh 5vw 6vh 5vw;
     padding: .5rem 1rem;
 }
 
@@ -23,16 +27,24 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 30px;
+    font-family: ff-prater-block-web, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0;
+
 }
 
 h2 {
     font-size: 15px;
+    font-family: ff-prater-serif-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
 }
 
-#scores {
+#question-score-container {
     text-align: center;
-    background-color: bisque;
     margin: 0 30% 7vh 30%;
     padding: 2vw;
 }
@@ -40,30 +52,46 @@ h2 {
 #text-display {
     margin: 0 5vw 5vh 5vw;
     padding: .5rem 1rem;
-    background-color: lightcoral;
     min-height: 100px;
+}
+
+#button-next-q-container {
+    height: auto;
+    
+}
+
+#button-next-q {
+    display: block;
+    margin: auto;
+    background-color: aquamarine;
 }
 
 #true-false-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: antiquewhite;
 }
 
 .t-f-button {
+   
     text-align: center;
     height: 30vw;
     max-height: 300px;
     width: 30vw;
     max-width: 300px;
     margin: 0 5vw 3vh 5vw;
+    border: 0;
 }
 
 #true {
-    background-color: aliceblue;
+    border: 3px solid black;
+    background-color: green;
+    color: white;
 }
 
 #false {
-    background-color: lightcyan;
+    border: 3px solid black;
+    background-color: red;
+    
+
 }
