@@ -4,10 +4,16 @@ body {
 
 .border {
     border: 3px solid red;
+    border-radius: 10px;
 }
 
 #game-container {
+    margin: 5vw 5vw;
     background-color: beige;
+}
+
+header {
+    margin: 2vh 5vw 6vh 5vw;
 }
 
 h1, h2 {
@@ -17,13 +23,15 @@ h1, h2 {
 #scores {
     text-align: center;
     background-color: bisque;
-    margin: 10vw 40vw;
+    margin: 0 30% 7vh 30%;
     padding: 2vw;
 }
 
 #text-display {
-    margin: 10vw;
+    margin: 0 5vw 5vh 5vw;
+    padding: ;
     background-color: lightcoral;
+    min-height: 100px;
 }
 
 #true-false-container {
@@ -36,7 +44,9 @@ h1, h2 {
 .t-f-button {
     text-align: center;
     height: 30vw;
+    max-height: 300px;
     width: 30vw;
+    max-width: 300px;
     margin: 5vw;
 }
 
