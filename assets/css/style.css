@@ -2,6 +2,10 @@ body {
     background-color: lightgray;
 }
 
+.border {
+    border: 3px solid red;
+}
+
 #game-container {
     background-color: beige;
 }
@@ -14,12 +18,12 @@ h1, h2 {
     text-align: center;
     background-color: bisque;
     margin: 10vw 40vw;
+    padding: 2vw;
 }
 
 #text-display {
     margin: 10vw;
     background-color: lightcoral;
-    border: 3px solid red;
 }
 
 #true-false-container {
