@@ -1,3 +1,9 @@
+/*Question number HTML container*/
+let questionNumberHTML = document.getElementById("question-num");
+questionNumberHTML.innerHTML = "Question: 2/10";
+
+console.log(questionNumberHTML);
+
 const state = {
     questionNumber: 1, 
     score: 0,
@@ -15,4 +21,14 @@ const state = {
     ]
 }
 
+
+
+/*Display Question */
+
+
+
+/*Listen to True Button*/
+
+
+/*Listen to False Button*/
 
