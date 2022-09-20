@@ -9,21 +9,24 @@ const state = {
             title: 'A guitar has 5 strings!',
             answer: false,
             playerAnswer: null,
+            used: false,
         },
         {
             title: 'A banjo is a string instrument!',
             answer: true,
             playerAnswer: null,
+            used: true,
         },
         {
             title: 'This is a question also!',
             answer: true,
             playerAnswer: null,
+            used: false,
         },
     ]
 }
 
-//DISPLAY QUESTION IN HTML
+///DISPLAY QUESTION IN HTML
 
 //Step1: Selects question 1 from state
 let question = state.questions[0];
@@ -35,21 +38,22 @@ let questionTitle = (question["title"]);
 let questionTextHTML = document.getElementById("text");
 questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
 
-///QUESTION NUMBERS
+///CURRENT QUESTION NUMBER AND TOTAL NUMBERS TO HTML
 
 // Displaying total number of questions
 //Step 1. find all questions
-let numberOfQuestions = state.questions;
+let allQuestions = state.questions;
 
 //Step 2. count all questions
-let totalNumberOfQuestions = numberOfQuestions.length;
+let totalNumberOfQuestions = allQuestions.length;
 
-
-// Displays question number and total number of questions in HTML
+// Step 3. Displays question number and total number of questions in HTML
 let questionNumberHTML = document.getElementById("question-num");
 questionNumberHTML.innerHTML = "Question: " + state.questionNumber + "/ " + totalNumberOfQuestions;
 
-//Button event listeners
+///True & False Buttons
+
+// Button Event listeners
 let buttonTrue = document.getElementById("true");
 buttonTrue.addEventListener("click", function() {
     fncheck(true);
@@ -62,12 +66,32 @@ buttonFalse.addEventListener("click", function() {
     console.log("false");
 });
 
-//check is user was correct
 
-function fncheck (answer) {
-    let questionAnswer = (question["answer"]);
-    console.log(questionAnswer);
-}
+
+///START OF GAME
+//1. Select a random Question
+    //1a. Select all 'questions.used' = false
+let usedQuestions = state.questions.filter(question => !question.used);
+console.log(usedQuestions);
+console.log(usedQuestions[0]);
+console.log(usedQuestions[1]);
+    //1b. randomly select a question from result
+    
+
+
+
+//3. Display question in html
+//4. Display question number in html
+
+
+///WHEN TRUE OR FALSE CLICKED
+//1. Check user answer against question answer
+//2. If correct add 1 for score
+//2. Set question 'used' to true
+//3. Check: Does 'questions.used' = question.length'
+            //if true = game is over 
+                // Display score 
+            //else goto start of game
 
 
 
