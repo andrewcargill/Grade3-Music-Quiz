@@ -30,22 +30,25 @@ let questionTitle = (question["title"]);
 let questionTextHTML = document.getElementById("text");
 questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
 
+///QUESTION NUMBERS
+
+// Displaying total number of questions
+//Step 1. find all questions
+let numberOfQuestions = state.questions;
+
+//Step 2. count all questions
+let totalNumberOfQuestions = numberOfQuestions.length;
+
 
 // Displays question number in HTML
 let questionNumberHTML = document.getElementById("question-num");
-questionNumberHTML.innerHTML = "Question: " + state.questionNumber;
+questionNumberHTML.innerHTML = "Question: " + state.questionNumber + "/ " + totalNumberOfQuestions;
 
 
 
 
-
-
-
-
-
-
-
-console.log(Object.values(state.questions));
+console.log(numberOfQuestions.length);
+console.log(totalNumberOfQuestions);
 
 //Button event listeners
 let buttonTrue = document.getElementById("true");
