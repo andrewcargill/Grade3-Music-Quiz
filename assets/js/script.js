@@ -15,6 +15,11 @@ const state = {
             answer: true,
             playerAnswer: null,
         },
+        {
+            title: 'This is a question also!',
+            answer: true,
+            playerAnswer: null,
+        },
     ]
 }
 
@@ -40,24 +45,29 @@ let numberOfQuestions = state.questions;
 let totalNumberOfQuestions = numberOfQuestions.length;
 
 
-// Displays question number in HTML
+// Displays question number and total number of questions in HTML
 let questionNumberHTML = document.getElementById("question-num");
 questionNumberHTML.innerHTML = "Question: " + state.questionNumber + "/ " + totalNumberOfQuestions;
-
-
-
-
-console.log(numberOfQuestions.length);
-console.log(totalNumberOfQuestions);
 
 //Button event listeners
 let buttonTrue = document.getElementById("true");
 buttonTrue.addEventListener("click", function() {
+    fncheck(true);
+    console.log("true");
 });
 
 let buttonFalse = document.getElementById("false");
 buttonFalse.addEventListener("click", function() {
+    fncheck(false);
+    console.log("false");
 });
+
+//check is user was correct
+
+function fncheck (answer) {
+    let questionAnswer = (question["answer"]);
+    console.log(questionAnswer);
+}
 
 
 
