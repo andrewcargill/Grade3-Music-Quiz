@@ -19,7 +19,7 @@ const state = {
         },
         {
             title: 'Question 3!',
-            answer: true,
+            answer: false,
             playerAnswer: null,
             used: false,
         },
@@ -31,7 +31,7 @@ const state = {
         },
         {
             title: 'Question 5!',
-            answer: true,
+            answer: false,
             playerAnswer: null,
             used: false,
         },
@@ -81,40 +81,45 @@ questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
 
 count++;
 
-};
 
+///Player Answers
 
+//Finds out answer to question
+let questionAnswer = nextQuestion["answer"];
+console.log(questionAnswer);
 
-
-console.log(count);
-
-///CURRENT QUESTION NUMBER AND TOTAL NUMBERS TO HTML
-
-// Displaying total number of questions
-//Step 1. find all questions
-let allQuestions = state.questions;
-
-//Step 2. count all questions
-let totalNumberOfQuestions = allQuestions.length;
-
-// Step 3. Displays question number and total number of questions in HTML
-let questionNumberHTML = document.getElementById("question-num");
-questionNumberHTML.innerHTML = "Question: " + count + "/ " + totalNumberOfQuestions;
-
-///True & False Buttons
-
-// Button Event listeners
 let buttonTrue = document.getElementById("true");
 buttonTrue.addEventListener("click", function() {
-    fncheck(true);
+
+nextQuestion.playerAnswer = true;
+
     console.log("true");
+    console.log(nextQuestion.playerAnswer);
+
 });
 
 let buttonFalse = document.getElementById("false");
 buttonFalse.addEventListener("click", function() {
-    fncheck(false);
+
+nextQuestion.playerAnswer = false;
     console.log("false");
+    console.log(nextQuestion.playerAnswer);
 });
+};
+
+///QUESTION COUNTER
+
+//Step 1. find all questions
+let allQuestions = state.questions;
+
+//Step 2. count number of questions
+let totalNumberOfQuestions = allQuestions.length;
+
+// Step 3. Display question number and total number of questions in HTML
+let questionNumberHTML = document.getElementById("question-num");
+questionNumberHTML.innerHTML = "Question: " + count + "/ " + totalNumberOfQuestions;
+
+
 
 
 
