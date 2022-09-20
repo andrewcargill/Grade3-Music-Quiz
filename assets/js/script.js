@@ -29,16 +29,51 @@ const state = {
             playerAnswer: null,
             used: false,
         },
+        {
+            title: 'Question 5!',
+            answer: true,
+            playerAnswer: null,
+            used: false,
+        },
+        {
+            title: 'Question 6!',
+            answer: true,
+            playerAnswer: null,
+            used: false,
+        },
+        {
+            title: 'Question 7!',
+            answer: true,
+            playerAnswer: null,
+            used: false,
+        },
     ]
 }
 
+///START OF GAME
+//1. Select a random Question
+    //1a. Select all 'questions.used' = false
+    let usedQuestions = state.questions.filter(question => !question.used);
+    /*
+    console.log(usedQuestions);
+    console.log(usedQuestions[0]);
+    console.log(usedQuestions[1]);*/
+    
+        //1b. randomly select a question from result
+    let random = Math.floor(Math.random() * usedQuestions.length);
+    let nextQuestion = (random, usedQuestions[random]);
+    console.log(nextQuestion);
+    console.log(nextQuestion["title"]);
+    
+    //3. Display question in html
+    
+    //4. Display question number in html
+    
+
 ///DISPLAY QUESTION IN HTML
 
-//Step1: Selects question 1 from state
-let question = state.questions[0];
-
 //Step 2: Selects the question text
-let questionTitle = (question["title"]);
+let questionTitle = (nextQuestion["title"]);
 
 //Step 3: Displays question text in html question container
 let questionTextHTML = document.getElementById("text");
@@ -74,23 +109,6 @@ buttonFalse.addEventListener("click", function() {
 
 
 
-///START OF GAME
-//1. Select a random Question
-    //1a. Select all 'questions.used' = false
-let usedQuestions = state.questions.filter(question => !question.used);
-/*
-console.log(usedQuestions);
-console.log(usedQuestions[0]);
-console.log(usedQuestions[1]);*/
-
-    //1b. randomly select a question from result
-let random = Math.floor(Math.random() * usedQuestions.length);
-let nextQuestion = (random, usedQuestions[random]);
-console.log(nextQuestion);
-
-
-//3. Display question in html
-//4. Display question number in html
 
 
 ///WHEN TRUE OR FALSE CLICKED
