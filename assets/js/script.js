@@ -1,4 +1,5 @@
 
+//Start of game
 
 const state = {
     questionNumber: 1, 
@@ -17,14 +18,34 @@ const state = {
     ]
 }
 
+//DISPLAY QUESTION IN HTML
 
-/*Question number HTML container*/
+//Step1: Selects question 1 from state
+let question = state.questions[0];
+
+//Step 2: Selects the question text
+let questionTitle = (question["title"]);
+
+//Step 3: Displays question text in html question container
+let questionTextHTML = document.getElementById("text");
+questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
+
+
+// Displays question number in HTML
 let questionNumberHTML = document.getElementById("question-num");
 questionNumberHTML.innerHTML = "Question: " + state.questionNumber;
 
-/*Display Question */
-let questionTextHTML = document.getElementById("text");
-questionTextHTML.innerHTML = "This is to test that JS is talking to the question container";
+
+
+
+
+
+
+
+
+
+
+console.log(Object.values(state.questions));
 
 //Button event listeners
 let buttonTrue = document.getElementById("true");
@@ -37,6 +58,6 @@ buttonFalse.addEventListener("click", function() {
 
 
 
-console.log(questionNumberHTML);
+
 
 
