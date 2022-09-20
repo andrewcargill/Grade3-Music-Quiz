@@ -51,33 +51,27 @@ const state = {
 }
 
 ///START OF GAME
-//1. Select a random Question
-    //1a. Select all 'questions.used' = false
-    let usedQuestions = state.questions.filter(question => !question.used);
-    /*
+//SELECT AND DISPLAY NEXT QUESTION
+//1. Check to see what questions have been used already in the game
+let usedQuestions = state.questions.filter(question => !question.used);
+    /* Checking variables
     console.log(usedQuestions);
     console.log(usedQuestions[0]);
     console.log(usedQuestions[1]);*/
     
-        //1b. randomly select a question from result
-    let random = Math.floor(Math.random() * usedQuestions.length);
-    let nextQuestion = (random, usedQuestions[random]);
-    console.log(nextQuestion);
-    console.log(nextQuestion["title"]);
+//2. From the unused questions - randomly select one
+let random = Math.floor(Math.random() * usedQuestions.length);
+let nextQuestion = (random, usedQuestions[random]);
+console.log(nextQuestion);
+console.log(nextQuestion["title"]);
     
-    //3. Display question in html
-    
-    //4. Display question number in html
-    
-
-///DISPLAY QUESTION IN HTML
-
-//Step 2: Selects the question text
+//3. Selects where question will be shown in HTML
 let questionTitle = (nextQuestion["title"]);
 
-//Step 3: Displays question text in html question container
+//4. Displays question in html question container
 let questionTextHTML = document.getElementById("text");
 questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
+
 
 ///CURRENT QUESTION NUMBER AND TOTAL NUMBERS TO HTML
 
