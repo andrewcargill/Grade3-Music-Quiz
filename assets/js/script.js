@@ -50,6 +50,12 @@ const state = {
     ]
 }
 
+let go = runQuestion();
+
+function runQuestion() {
+
+
+
 ///START OF GAME
 //SELECT AND DISPLAY NEXT QUESTION
 //1. Check to see what questions have been used already in the game
@@ -71,6 +77,11 @@ let questionTitle = (nextQuestion["title"]);
 //4. Displays question in html question container
 let questionTextHTML = document.getElementById("text");
 questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
+
+
+
+};
+
 
 
 ///CURRENT QUESTION NUMBER AND TOTAL NUMBERS TO HTML
