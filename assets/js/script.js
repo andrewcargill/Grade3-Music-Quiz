@@ -46,86 +46,76 @@ const state = {
     ]
 }
 
-///QUESTION COUNTER
-let allQuestions = state.questions;
-let totalNumberOfQuestions = allQuestions.length;
+///START OF GAME
+    //SELECT AND DISPLAY NEXT QUESTION
+    //Check to see what questions have been used already in the game
+    let usedQuestions = state.questions.filter(question => !question.used);
 
-let questionNumber = state.questionNumber;
-let questionNumberHTML = document.getElementById("question-num");
+    //From the unused questions - randomly select one
+    let currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
 
-
-let go = runQuestion();
+///DOM update state & listeners
 
 ///Starts the game and loops round for each question
 
-function runQuestion() {
-console.log(state);
-   
-    ///Game question number
+function updateHtmlFromState() {
+
+
+    ///QUESTION COUNTER
+    let allQuestions = state.questions;
+    let totalNumberOfQuestions = allQuestions.length;
+
+    let questionNumber = state.questionNumber;
+    let questionNumberHTML = document.getElementById("question-num");
     questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
 
-    ///START OF GAME
-    //SELECT AND DISPLAY NEXT QUESTION
-    //1. Check to see what questions have been used already in the game
-    let usedQuestions = state.questions.filter(question => !question.used);
-    console.log(usedQuestions);
+    
 
-    //2. From the unused questions - randomly select one
-    let random = Math.floor(Math.random() * usedQuestions.length);
-    let nextQuestion = usedQuestions[random];
-    /*let nextQuestion = (random, usedQuestions[random]);*/
-
-    //3. Selects where question will be shown in HTML
-    let questionTitle = (nextQuestion["title"]);
-
+    let questionTitle = (state.questions[currentQuestionNumber].title);
+    console.log('------------andy Line 75 questionTitle', questionTitle);
+    
     //4. Displays question in html question container
     let questionTextHTML = document.getElementById("text");
     questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
-
-    //Finds out answer to question
-    let questionAnswer = nextQuestion["answer"];
-
-///Wait for Player to answer///
-
-
-    //If player clicks 'true' / compares answer and updates player correct
-    let buttonTrue = document.getElementById("true");
-    buttonTrue.addEventListener("click", function () {
-
-        nextQuestion.playerAnswer = true;
-        updateState();
-    });
-
-    //If player clicks 'false' / compares answer and updates player correct
-    let buttonFalse = document.getElementById("false");
-    buttonFalse.addEventListener("click", function () {
-
-        nextQuestion.playerAnswer = false;
-        updateState();
-    });
-
-    /// Compare player answer to question answer and update state
-
-    function updateState() {
-        if (nextQuestion.playerAnswer === questionAnswer) {
-            nextQuestion.playerCorrect = true;
-            nextQuestion.used = true;
-            questionNumber++;
-            runQuestion();
-        } else {
-            nextQuestion.playerCorrect = false;
-            nextQuestion.used = true;
-            questionNumber++;
-            runQuestion();
-        }
-    console.log("question at end of chain", nextQuestion);
-    console.log("state at end of chain", state);
-    };
-
-
 };
 
+updateHtmlFromState();
+
+function addListenersToButtons () {
+    let buttonTrue = document.getElementById("true");
+    buttonTrue.addEventListener("click", function () {
+        updateState(true);
+        currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
+        updateHtmlFromState()
+    });
+
+    let buttonFalse = document.getElementById("false");
+    buttonFalse.addEventListener("click", function () {
+        updateState(false);
+        currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
+        updateHtmlFromState()
+    });
+};
+
+addListenersToButtons()
+
+function updateState(playerAnswer) {
+    let questionAnswer = state.questions[currentQuestionNumber].answer;
+    if (playerAnswer === questionAnswer) {
+        state.questions[currentQuestionNumber].playerCorrect = true;
+    } else {
+        state.questions[currentQuestionNumber].playerCorrect = false;
+    }
+    state.questions[currentQuestionNumber].used = true;
+    state.questionNumber++;
+    console.log('------------andy Line 109 ', );
+    
+};
+
+
+
 /// TO DO!
+/// 
 //Does 'questions.used' = questions.length'
 //if true = game is over 
 // Display score 
