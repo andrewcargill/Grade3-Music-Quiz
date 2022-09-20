@@ -18,7 +18,13 @@ const state = {
             used: true,
         },
         {
-            title: 'This is a question also!',
+            title: 'Question 3!',
+            answer: true,
+            playerAnswer: null,
+            used: false,
+        },
+        {
+            title: 'Question 4!',
             answer: true,
             playerAnswer: null,
             used: false,
@@ -72,12 +78,15 @@ buttonFalse.addEventListener("click", function() {
 //1. Select a random Question
     //1a. Select all 'questions.used' = false
 let usedQuestions = state.questions.filter(question => !question.used);
+/*
 console.log(usedQuestions);
 console.log(usedQuestions[0]);
-console.log(usedQuestions[1]);
-    //1b. randomly select a question from result
-    
+console.log(usedQuestions[1]);*/
 
+    //1b. randomly select a question from result
+let random = Math.floor(Math.random() * usedQuestions.length);
+let nextQuestion = (random, usedQuestions[random]);
+console.log(nextQuestion);
 
 
 //3. Display question in html
