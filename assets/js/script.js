@@ -47,7 +47,7 @@ const state = {
 }
 
 ///QUESTION COUNTER
-const allQuestions = state.questions;
+let allQuestions = state.questions;
 let totalNumberOfQuestions = allQuestions.length;
 
 let questionNumber = state.questionNumber;
@@ -59,7 +59,8 @@ let go = runQuestion();
 ///Starts the game and loops round for each question
 
 function runQuestion() {
-
+console.log(state);
+   
     ///Game question number
     questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
 
@@ -71,14 +72,15 @@ function runQuestion() {
 
     //2. From the unused questions - randomly select one
     let random = Math.floor(Math.random() * usedQuestions.length);
-    let nextQuestion = (random, usedQuestions[random]);
+    let nextQuestion = usedQuestions[random];
+    /*let nextQuestion = (random, usedQuestions[random]);*/
 
     //3. Selects where question will be shown in HTML
     let questionTitle = (nextQuestion["title"]);
 
     //4. Displays question in html question container
     let questionTextHTML = document.getElementById("text");
-    questionTextHTML.innerHTML = "Q" + state.questionNumber + ": " + questionTitle;
+    questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
 
     //Finds out answer to question
     let questionAnswer = nextQuestion["answer"];
@@ -91,20 +93,7 @@ function runQuestion() {
     buttonTrue.addEventListener("click", function () {
 
         nextQuestion.playerAnswer = true;
-
-        if (nextQuestion.playerAnswer === questionAnswer) {
-            nextQuestion.playerCorrect = true;
-            nextQuestion.used = true;
-            questionNumber++;
-            runQuestion();
-        } else {
-            nextQuestion.playerCorrect = false;
-            nextQuestion.used = true;
-            questionNumber++;
-            runQuestion();
-        }
-        console.log(nextQuestion);
-        console.log("question number", questionNumber);
+        updateState();
     });
 
     //If player clicks 'false' / compares answer and updates player correct
@@ -112,27 +101,26 @@ function runQuestion() {
     buttonFalse.addEventListener("click", function () {
 
         nextQuestion.playerAnswer = false;
+        updateState();
+    });
 
+    /// Compare player answer to question answer and update state
+
+    function updateState() {
         if (nextQuestion.playerAnswer === questionAnswer) {
             nextQuestion.playerCorrect = true;
             nextQuestion.used = true;
             questionNumber++;
             runQuestion();
-
-
         } else {
             nextQuestion.playerCorrect = false;
             nextQuestion.used = true;
             questionNumber++;
             runQuestion();
         }
-        console.log(nextQuestion);
-        console.log(questionNumber);
-
-
-    });
-
-
+    console.log("question at end of chain", nextQuestion);
+    console.log("state at end of chain", state);
+    };
 
 
 };
