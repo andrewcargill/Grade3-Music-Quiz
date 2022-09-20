@@ -6,46 +6,46 @@ const state = {
     score: 0,
     questions: [
         {
-            title: 'A guitar has 5 strings!',
-            answer: false,
+            title: 'True',
+            answer: true,
             playerAnswer: null,
+            playerCorrect: null,
             used: false,
         },
         {
-            title: 'A banjo is a string instrument!',
+            title: 'Answer is true',
             answer: true,
             playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: 'False',
+            answer: false,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: 'Answer is true',
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
             used: true,
         },
         {
-            title: 'Question 3!',
+            title: 'False',
             answer: false,
             playerAnswer: null,
-            used: false,
+            playerCorrect: null,
+            used: true,
         },
         {
-            title: 'Question 4!',
+            title: 'Answer is true',
             answer: true,
             playerAnswer: null,
-            used: false,
-        },
-        {
-            title: 'Question 5!',
-            answer: false,
-            playerAnswer: null,
-            used: false,
-        },
-        {
-            title: 'Question 6!',
-            answer: true,
-            playerAnswer: null,
-            used: false,
-        },
-        {
-            title: 'Question 7!',
-            answer: true,
-            playerAnswer: null,
-            used: false,
+            playerCorrect: null,
+            used: true,
         },
     ]
 }
@@ -88,23 +88,48 @@ count++;
 let questionAnswer = nextQuestion["answer"];
 console.log(questionAnswer);
 
+
+//If player clicks 'true' / compares answer and updates player correct
 let buttonTrue = document.getElementById("true");
 buttonTrue.addEventListener("click", function() {
 
 nextQuestion.playerAnswer = true;
 
-    console.log("true");
-    console.log(nextQuestion.playerAnswer);
-
+if (nextQuestion.playerAnswer === questionAnswer){
+        nextQuestion.playerCorrect = true;
+        nextQuestion.user = true;
+    } else {
+        nextQuestion.playerCorrect = false;
+        nextQuestion.user = true;
+    }
+    console.log(nextQuestion.playerCorrect);
+    console.log(nextQuestion.user);
 });
 
+//If player clicks 'false' / compares answer and updates player correct
 let buttonFalse = document.getElementById("false");
 buttonFalse.addEventListener("click", function() {
 
 nextQuestion.playerAnswer = false;
-    console.log("false");
-    console.log(nextQuestion.playerAnswer);
+
+if (nextQuestion.playerAnswer === questionAnswer){
+        nextQuestion.playerCorrect = true;
+        nextQuestion.user = true;
+
+       
+    } else {
+        nextQuestion.playerCorrect = false;
+        nextQuestion.user = true;
+    }
+    console.log(nextQuestion.playerCorrect);
+    console.log(nextQuestion.user);
+
+
 });
+
+
+
+
 };
 
 ///QUESTION COUNTER
