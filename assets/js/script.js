@@ -22,36 +22,19 @@ const state = {
             playerCorrect: null,
             used: false,
         },
-        {
-            title: 'Question 4 - Answer is true',
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-        },
-        {
-            title: 'Question 5 - False',
-            answer: false,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-        },
-        {
-            title: 'Question 6 - Answer is true',
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-        },
     ]
 }
 
 ///START OF GAME
     //SELECT AND DISPLAY NEXT QUESTION
     //Check to see what questions have been used already in the game
-    let usedQuestions = state.questions.filter(question => !question.used);
+    //let usedQuestions = state.questions.filter(question => !question.used);
 
     //From the unused questions - randomly select one
+    //let currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
+
+    let usedQuestions = state.questions.filter(question => !question.used);
+    
     let currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
 
 ///DOM update state & listeners
@@ -59,7 +42,7 @@ const state = {
 ///Starts the game and loops round for each question
 
 function updateHtmlFromState() {
-
+    usedQuestions = state.questions.filter(question => !question.used);
 
     ///QUESTION COUNTER
     let allQuestions = state.questions;
@@ -69,12 +52,14 @@ function updateHtmlFromState() {
     let questionNumberHTML = document.getElementById("question-num");
     questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
 
-    
-
     let questionTitle = (state.questions[currentQuestionNumber].title);
-    console.log('------------andy Line 75 questionTitle', questionTitle);
+console.log('------------andy Line 77 usedQuestions', usedQuestions);
+console.log('------------andy Line 78 state.questions', state.questions);
+
+    console.log('------------andy Line 80 current question', state.questions[currentQuestionNumber].title);
     
-    //4. Displays question in html question container
+    
+    ///Question to html
     let questionTextHTML = document.getElementById("text");
     questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
 };
@@ -108,7 +93,8 @@ function updateState(playerAnswer) {
     }
     state.questions[currentQuestionNumber].used = true;
     state.questionNumber++;
-    console.log('------------andy Line 109 ', );
+console.log('------------andy Line 116 stat.questions.playerCorrect', state.questions[currentQuestionNumber].playerCorrect);
+
     
 };
 
