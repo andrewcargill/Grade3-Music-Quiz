@@ -49,6 +49,7 @@ const state = {
         },
     ]
 }
+let count = 0;
 
 let go = runQuestion();
 
@@ -78,11 +79,14 @@ let questionTitle = (nextQuestion["title"]);
 let questionTextHTML = document.getElementById("text");
 questionTextHTML.innerHTML = "Q" +state.questionNumber + ": " + questionTitle;
 
-
+count++;
 
 };
 
 
+
+
+console.log(count);
 
 ///CURRENT QUESTION NUMBER AND TOTAL NUMBERS TO HTML
 
@@ -95,7 +99,7 @@ let totalNumberOfQuestions = allQuestions.length;
 
 // Step 3. Displays question number and total number of questions in HTML
 let questionNumberHTML = document.getElementById("question-num");
-questionNumberHTML.innerHTML = "Question: " + state.questionNumber + "/ " + totalNumberOfQuestions;
+questionNumberHTML.innerHTML = "Question: " + count + "/ " + totalNumberOfQuestions;
 
 ///True & False Buttons
 
