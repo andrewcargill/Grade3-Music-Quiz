@@ -110,7 +110,9 @@ function updateHtmlFromState() {
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML = 
-        `<p>You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>`;
+        `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>
+        <p text-align="center" ><button>PLAY AGAIN</button></p>`;
+
     } else {
 
 
@@ -173,6 +175,5 @@ function updateState(playerAnswer) {
 
 /// TO DO!
 // Add more text to end screen 
-// question numbers
 // Add styling to game
 // Add random to questions
