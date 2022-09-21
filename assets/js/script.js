@@ -3,29 +3,71 @@ const state = {
     questionNumber: 0,
     score: 0,
     questions: [{
-            title: 'Question 1 - True',
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-        },
-        {
-            title: 'Question 2 - Answer is true',
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-        },
-        {
-            title: 'Question 3 - False',
+            title: 'A guitar has 5 strings',
             answer: false,
             playerAnswer: null,
             playerCorrect: null,
             used: false,
         },
         {
-            title: 'Question 4 - False',
+            title: 'A trumpet is a woodwind instrument',
             answer: false,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: 'Tempo is how fast a song is played',
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "Hip hop originated in the 1980's",
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "The Xylophone is a percussion instrument",
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "The guitar has three main parts: The body, the neck and the head",
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "The biggest drum in a drum kit is called the 'snare drum'",
+            answer: false,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "The white notes on the piano are tuned to: A B C D E F G H I..'",
+            answer: false,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "A chord is created when you play more than one note/tone at the same time'",
+            answer: true,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
+        {
+            title: "A hi-hat is an instrument",
+            answer: true,
             playerAnswer: null,
             playerCorrect: null,
             used: false,
@@ -52,8 +94,9 @@ function updateHtmlFromState() {
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
-        questionTextHTML.innerHTML = "End Of Game! You scored: " + finalScore;
-        
+        questionTextHTML.innerHTML = 
+        'You scored: ' + finalScore + ' out of ' + totalNumberOfQuestions + '!';
+
 
         console.log('------------andy Line 55 numberOfCorrectAnswers', numberOfCorrectAnswers);
         console.log('------------andy Line 37 state.questions', state.questions);
