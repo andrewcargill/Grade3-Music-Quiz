@@ -25,26 +25,32 @@ const state = {
     ]
 }
 
-///START OF GAME
-    //SELECT AND DISPLAY NEXT QUESTION
-    //Check to see what questions have been used already in the game
-    //let usedQuestions = state.questions.filter(question => !question.used);
+/**
+ * How do I access 'current Question number' across the different functions?
+ * Such as updating state.questions.playerCorrect / state.questions.used
+ * 
+ * Should I rethink how I am doing things?
+ */
 
-    //From the unused questions - randomly select one
-    //let currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
 
-    let usedQuestions = state.questions.filter(question => !question.used);
+/**
+ * Looks at State for un-used questions and randomly selects a question
+ */
+
+    let unusedQuestions = state.questions.filter(question => !question.used);
     
-    let currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
+    let currentQuestionNumber = Math.floor(Math.random() * unusedQuestions.length);
 
-///DOM update state & listeners
+    document.addEventListener("DOMContentLoaded", function() {
+        updateHtmlFromState();
+        addListenersToButtons();
+    })
 
-///Starts the game and loops round for each question
 
 function updateHtmlFromState() {
-    usedQuestions = state.questions.filter(question => !question.used);
+    unusedQuestions = state.questions.filter(question => !question.used);
 
-    ///QUESTION COUNTER
+    ///Displays Q number and counter
     let allQuestions = state.questions;
     let totalNumberOfQuestions = allQuestions.length;
 
@@ -52,19 +58,22 @@ function updateHtmlFromState() {
     let questionNumberHTML = document.getElementById("question-num");
     questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
 
+
     let questionTitle = (state.questions[currentQuestionNumber].title);
 console.log('------------andy Line 77 usedQuestions', usedQuestions);
 console.log('------------andy Line 78 state.questions', state.questions);
-
-    console.log('------------andy Line 80 current question', state.questions[currentQuestionNumber].title);
+console.log('------------andy Line 80 current question', state.questions[currentQuestionNumber].title);
     
     
-    ///Question to html
+    ///Adds question to html
     let questionTextHTML = document.getElementById("text");
     questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
-};
+}
 
-updateHtmlFromState();
+
+/**
+ * True and False Buttons
+ */
 
 function addListenersToButtons () {
     let buttonTrue = document.getElementById("true");
@@ -80,10 +89,12 @@ function addListenersToButtons () {
         currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
         updateHtmlFromState()
     });
-};
+}
 
-addListenersToButtons()
-
+/**
+ * Compares answer and updates state
+ *  
+ */
 function updateState(playerAnswer) {
     let questionAnswer = state.questions[currentQuestionNumber].answer;
     if (playerAnswer === questionAnswer) {
@@ -93,9 +104,6 @@ function updateState(playerAnswer) {
     }
     state.questions[currentQuestionNumber].used = true;
     state.questionNumber++;
-console.log('------------andy Line 116 stat.questions.playerCorrect', state.questions[currentQuestionNumber].playerCorrect);
-
-    
 };
 
 
