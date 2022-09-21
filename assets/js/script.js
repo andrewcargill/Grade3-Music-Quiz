@@ -163,7 +163,7 @@ function updateState(playerAnswer) {
 
 
 /// TO DO!
-/// 
-//Does 'questions.used' = questions.length'
-//if true = game is over 
-// Display score 
+// Add more text to end screen 
+// question numbers
+// Add styling to game
+// Add random to questions
