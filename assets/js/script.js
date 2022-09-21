@@ -23,6 +23,13 @@ const state = {
             playerCorrect: null,
             used: false,
         },
+        {
+            title: 'Question 4 - False',
+            answer: false,
+            playerAnswer: null,
+            playerCorrect: null,
+            used: false,
+        },
     ]
 }
 
@@ -34,27 +41,38 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 function updateHtmlFromState() {
-
-    if (state.endGame === false) {
-        ///Displays Q number and counter
-        console.log('------------andy Line 37 state.questions', state.questions);
-
-        let currentQuestionNumber = state.questionNumber;
+    let currentQuestionNumber = state.questionNumber;
         let totalNumberOfQuestions = state.questions.length;
         let questionNumber = state.questionNumber;
         let questionNumberHTML = document.getElementById("question-num");
+
+    if (state.questionNumber === state.questions.length) {
+
+        let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
+        let finalScore = numberOfCorrectAnswers;
+        questionNumberHTML.innerHTML = "End Of Game";
+        let questionTextHTML = document.getElementById("text");
+        questionTextHTML.innerHTML = "End Of Game! You scored: " + finalScore;
+        
+
+        console.log('------------andy Line 55 numberOfCorrectAnswers', numberOfCorrectAnswers);
+        console.log('------------andy Line 37 state.questions', state.questions);
+    } else {
+
+
+        ///Displays Q number and counter
+        console.log('------------andy Line 37 state.questions', state.questions);
+
+       // let currentQuestionNumber = state.questionNumber;
+       // let totalNumberOfQuestions = state.questions.length;
+       // let questionNumber = state.questionNumber;
+       // let questionNumberHTML = document.getElementById("question-num");
         questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
         let questionTitle = (state.questions[currentQuestionNumber].title);
         ///Adds question to html
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
-    } else {
-        
-        let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
-        let finalScore = numberOfCorrectAnswers;
-console.log('------------andy Line 55 numberOfCorrectAnswers', numberOfCorrectAnswers);
 
-        
     }
 
 }
@@ -71,6 +89,8 @@ function addListenersToButtons() {
     let buttonFalse = document.getElementById("false");
     buttonFalse.addEventListener("click", function () {
         updateState(false);
+        console.log('------------andy Line 74 state', state);
+
         updateHtmlFromState()
     });
 }
@@ -81,22 +101,20 @@ function addListenersToButtons() {
  * Updates .used 
  */
 function updateState(playerAnswer) {
-    state.questionNumber++;
     
-    if (state.questionNumber === state.questions.length) {
-        state.endGame = true;
-        console.log('------------andy Line 76 endGame', state.endGame);
-
-    } else {
-        let currentQuestionNumber = state.questionNumber;
-        let questionAnswer = state.questions[currentQuestionNumber].answer;
-        if (playerAnswer === questionAnswer) {
-            state.questions[currentQuestionNumber].playerCorrect = true;
-        } else {
-            state.questions[currentQuestionNumber].playerCorrect = false;
-        }
-    }
+    let currentQuestionNumber = state.questionNumber;
     state.questions[currentQuestionNumber].used = true;
+    let questionAnswer = state.questions[currentQuestionNumber].answer;
+
+    if (playerAnswer === questionAnswer) {
+        state.questions[currentQuestionNumber].playerCorrect = true;
+    } else {
+        state.questions[currentQuestionNumber].playerCorrect = false;
+    }
+    state.questionNumber++;
+    console.log('------------andy Line 105 Updated');
+    
+
 };
 
 
