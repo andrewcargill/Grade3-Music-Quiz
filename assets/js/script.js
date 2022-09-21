@@ -105,7 +105,7 @@ function updateHtmlFromState() {
 
     if (state.questionNumber === state.questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
-        playAgainButton.style.display = 'block';
+        playAgainButton.style.visibility = 'visible';
         let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
@@ -152,7 +152,10 @@ function addListenersToButtons() {
     let buttonPlayAgain = document.getElementById("play-again-button");
     buttonPlayAgain.addEventListener("click", function(){
         console.log('------------andy hello');
-        
+        buttonPlayAgain.style.visibility = "hidden";
+        state.questionNumber = 0;
+        state.scoreNumber = 1;
+        updateHtmlFromState();
     })
 }
 

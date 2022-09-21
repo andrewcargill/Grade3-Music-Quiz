@@ -62,8 +62,12 @@ h2 {
     
 }
 
+#button-container {
+    text-align: center;
+}
+
 #play-again-button {
-    display: none;
+    visibility: hidden;
 }
 
 
