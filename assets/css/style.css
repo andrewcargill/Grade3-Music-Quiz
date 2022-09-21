@@ -59,11 +59,14 @@ h2 {
     margin: 0 5vw 5vh 5vw;
     padding: .5rem 1rem;
     min-height: 100px;
+    
 }
 
-#text p {
-    text-align: center;
+#play-again-button {
+    display: none;
 }
+
+
 
 #button-next-q-container {
     height: auto;

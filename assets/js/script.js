@@ -104,14 +104,14 @@ function updateHtmlFromState() {
         let questionNumberHTML = document.getElementById("question-num");
 
     if (state.questionNumber === state.questions.length) {
-
+        let playAgainButton = document.getElementById('play-again-button');
+        playAgainButton.style.display = 'block';
         let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML = 
-        `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>
-        <p text-align="center" ><button>PLAY AGAIN</button></p>`;
+        `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>`;
 
     } else {
 
@@ -148,6 +148,12 @@ function addListenersToButtons() {
 
         updateHtmlFromState()
     });
+
+    let buttonPlayAgain = document.getElementById("play-again-button");
+    buttonPlayAgain.addEventListener("click", function(){
+        console.log('------------andy hello');
+        
+    })
 }
 
 /**
