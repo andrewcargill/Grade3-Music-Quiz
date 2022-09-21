@@ -1,5 +1,6 @@
 const state = {
-    questionNumber: 1,
+    endGame: false,
+    questionNumber: 0,
     score: 0,
     questions: [{
             title: 'Question 1 - True',
@@ -25,85 +26,77 @@ const state = {
     ]
 }
 
-/**
- * How do I access 'current Question number' across the different functions?
- * Such as updating state.questions.playerCorrect / state.questions.used
- * 
- * Should I rethink how I am doing things?
- */
+let unusedQuestionsCount = state.questions.filter(x => !x.used).length;
 
-
-/**
- * Looks at State for un-used questions and randomly selects a question
- */
-
-    let unusedQuestions = state.questions.filter(question => !question.used);
-    
-    let currentQuestionNumber = Math.floor(Math.random() * unusedQuestions.length);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        updateHtmlFromState();
-        addListenersToButtons();
-    })
-
+document.addEventListener("DOMContentLoaded", function () {
+    updateHtmlFromState();
+    addListenersToButtons();
+})
 
 function updateHtmlFromState() {
-    unusedQuestions = state.questions.filter(question => !question.used);
 
-    ///Displays Q number and counter
-    let allQuestions = state.questions;
-    let totalNumberOfQuestions = allQuestions.length;
+    if (state.endGame === false) {
+        ///Displays Q number and counter
+        console.log('------------andy Line 37 state.questions', state.questions);
 
-    let questionNumber = state.questionNumber;
-    let questionNumberHTML = document.getElementById("question-num");
-    questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
+        let currentQuestionNumber = state.questionNumber;
+        let totalNumberOfQuestions = state.questions.length;
+        let questionNumber = state.questionNumber;
+        let questionNumberHTML = document.getElementById("question-num");
+        questionNumberHTML.innerHTML = "Question: " + questionNumber + "/ " + totalNumberOfQuestions;
+        let questionTitle = (state.questions[currentQuestionNumber].title);
+        ///Adds question to html
+        let questionTextHTML = document.getElementById("text");
+        questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
+    } else {
+        
+        let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
+        let finalScore = numberOfCorrectAnswers;
+console.log('------------andy Line 55 numberOfCorrectAnswers', numberOfCorrectAnswers);
 
+        
+    }
 
-    let questionTitle = (state.questions[currentQuestionNumber].title);
-console.log('------------andy Line 77 usedQuestions', usedQuestions);
-console.log('------------andy Line 78 state.questions', state.questions);
-console.log('------------andy Line 80 current question', state.questions[currentQuestionNumber].title);
-    
-    
-    ///Adds question to html
-    let questionTextHTML = document.getElementById("text");
-    questionTextHTML.innerHTML = "Q" + questionNumber + ": " + questionTitle;
 }
-
-
 /**
  * True and False Buttons
  */
-
-function addListenersToButtons () {
+function addListenersToButtons() {
     let buttonTrue = document.getElementById("true");
     buttonTrue.addEventListener("click", function () {
         updateState(true);
-        currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
         updateHtmlFromState()
     });
 
     let buttonFalse = document.getElementById("false");
     buttonFalse.addEventListener("click", function () {
         updateState(false);
-        currentQuestionNumber = Math.floor(Math.random() * usedQuestions.length);
         updateHtmlFromState()
     });
 }
 
 /**
- * Compares answer and updates state
- *  
+ * Compares answer
+ * Updates .playerCorrect
+ * Updates .used 
  */
 function updateState(playerAnswer) {
-    let questionAnswer = state.questions[currentQuestionNumber].answer;
-    if (playerAnswer === questionAnswer) {
-        state.questions[currentQuestionNumber].playerCorrect = true;
+    state.questionNumber++;
+    
+    if (state.questionNumber === state.questions.length) {
+        state.endGame = true;
+        console.log('------------andy Line 76 endGame', state.endGame);
+
     } else {
-        state.questions[currentQuestionNumber].playerCorrect = false;
+        let currentQuestionNumber = state.questionNumber;
+        let questionAnswer = state.questions[currentQuestionNumber].answer;
+        if (playerAnswer === questionAnswer) {
+            state.questions[currentQuestionNumber].playerCorrect = true;
+        } else {
+            state.questions[currentQuestionNumber].playerCorrect = false;
+        }
     }
     state.questions[currentQuestionNumber].used = true;
-    state.questionNumber++;
 };
 
 
