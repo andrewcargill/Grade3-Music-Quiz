@@ -75,7 +75,19 @@ const state = {
     ]
 }
 
-let unusedQuestionsCount = state.questions.filter(x => !x.used).length;
+//find number of unused questions
+//pick a random number
+
+function nextQuestion() {
+    let unusedQuestions = state.questions.filter(x => !x.used);
+    let me = unusedQuestions;
+    return me;
+    //let selectNextQuestion = unusedQuestions[Math.floor() *unusedQuestions];
+   // return unusedQuestions;
+    
+}
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     updateHtmlFromState();
@@ -83,6 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 function updateHtmlFromState() {
+    nextQuestion();
+console.log('------------andy Line 97 nextQuestion', nextQuestion());
+    
+    
     let currentQuestionNumber = state.questionNumber;
         let totalNumberOfQuestions = state.questions.length;
         let questionNumber = state.questionNumber;
