@@ -137,6 +137,7 @@ function addListenersToButtons() {
         buttonPlayAgain.style.visibility = "hidden";
         state.questionNumber = 0;
         state.scoreNumber = 1;
+        fyShuffle(questions);
         updateHtmlFromState();
     })
 }
