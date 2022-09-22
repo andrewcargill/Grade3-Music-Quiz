@@ -69,7 +69,7 @@ let questions = [{
         playerAnswer: null,
         playerCorrect: null,
     },
-]
+];
 
 
 
@@ -93,7 +93,7 @@ let shuffledArray = fyShuffle(questions);
 document.addEventListener("DOMContentLoaded", function () {
     updateHtmlFromState();
     addListenersToButtons();
-})
+});
 
 
 /**
@@ -118,7 +118,6 @@ function updateHtmlFromState() {
             `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
     } else { ///Displays Question number and Question
         questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
-        let questionTitle = (currentQuestion.title);
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML =
             "Q" + state.scoreNumber + ": " + currentQuestion.title;
@@ -133,13 +132,13 @@ function addListenersToButtons() {
     let buttonTrue = document.getElementById("true");
     buttonTrue.addEventListener("click", function () {
         updateState(true);
-        updateHtmlFromState()
+        updateHtmlFromState();
     });
 
     let buttonFalse = document.getElementById("false");
     buttonFalse.addEventListener("click", function () {
         updateState(false);
-        updateHtmlFromState()
+        updateHtmlFromState();
     });
 
     let buttonPlayAgain = document.getElementById("play-again-button");
@@ -149,7 +148,7 @@ function addListenersToButtons() {
         state.scoreNumber = 1;
         fyShuffle(questions);
         updateHtmlFromState();
-    })
+    });
 }
 
 /**
@@ -166,4 +165,4 @@ function updateState(playerAnswer) {
     }
     state.questionNumber++;
     state.scoreNumber++;
-};
+}
