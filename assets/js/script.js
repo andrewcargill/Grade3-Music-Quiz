@@ -158,7 +158,6 @@ function addListenersToButtons() {
 function updateState(playerAnswer) {
     let questionNumber = state.questionNumber;
     let currentQuestion = (shuffledArray[questionNumber]);
-    console.log('------------andy Line 170 Update State currentQuestion', currentQuestion);
 
     if (playerAnswer === currentQuestion.answer) {
         currentQuestion.playerCorrect = true;
