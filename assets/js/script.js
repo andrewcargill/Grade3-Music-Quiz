@@ -1,69 +1,80 @@
+/**
+ * Controls the game and Question number display
+ */
 const state = {
     endGame: false,
     questionNumber: 0,
     scoreNumber: 1,
 };
 
+/**
+ * Questions for the game
+ */
 let questions = [{
         title: 'A guitar has 5 strings',
         answer: false,
         playerAnswer: null,
         playerCorrect: null,
-        used: false,
-        activeQuestion: false
     },
     {
         title: 'A trumpet is a woodwind instrument',
         answer: false,
         playerAnswer: null,
         playerCorrect: null,
-        used: false,
-        activeQuestion: false
     },
     {
         title: 'Tempo is how fast a song is played',
         answer: true,
         playerAnswer: null,
         playerCorrect: null,
-        used: false,
-        activeQuestion: false
     },
     {
         title: "Hip hop originated in the 1980's",
         answer: true,
         playerAnswer: null,
         playerCorrect: null,
-        used: true,
-        activeQuestion: false
     }, {
         title: "The Xylophone is a percussion instrument",
         answer: true,
         playerAnswer: null,
         playerCorrect: null,
-        used: true,
-        activeQuestion: false,
     },
     {
         title: "The guitar has three main parts: The body, the neck and the head",
         answer: true,
         playerAnswer: null,
         playerCorrect: null,
-        used: true,
-        activeQuestion: false,
     },
     {
         title: "The biggest drum in a drum kit is called the 'snare drum'",
         answer: false,
         playerAnswer: null,
         playerCorrect: null,
-        used: true,
-        activeQuestion: false,
+    },
+    {
+        title: "The white notes on the piano are tuned to: A B C D E F G H I..'",
+        answer: false,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "A chord is created when you play more than one note/tone at the same time'",
+        answer: true,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "A hi-hat is an instrument",
+        answer: true,
+        playerAnswer: null,
+        playerCorrect: null,
     },
 ]
 
 
+
 // https://sebhastian.com/fisher-yates-shuffle-javascript/
-// shuffling an array
+// shuffles the 'questions' array
 
 function fyShuffle(arr) {
     let i = arr.length;
@@ -74,6 +85,7 @@ function fyShuffle(arr) {
     return arr;
 }
 
+//Calls on questions to be shuffled
 let shuffledArray = fyShuffle(questions);
 
 
@@ -84,20 +96,16 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
-/// Updates HTML for each question
+/**
+ * Updates HTML for each question and end of game
+ */
 function updateHtmlFromState() {
     let questionNumber = state.questionNumber;
     let currentQuestion = (shuffledArray[questionNumber]);
-
-    console.log('------------andy Line 92 currentQuestion', currentQuestion);
-    console.log('------------andy Line 93 questions', questions);
-    
-
-
     let totalNumberOfQuestions = questions.length;
     let questionNumberHTML = document.getElementById("question-num");
 
-    ///After last question screen
+///When end of game is reached - score is displayed and play again button
     if (state.questionNumber === questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
@@ -105,11 +113,10 @@ function updateHtmlFromState() {
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
+        questionTextHTML.style.textAlign = "center";
         questionTextHTML.innerHTML =
-            `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>`;
-
-    } else {
-        ///Displays Question number and Question
+            `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
+    } else { ///Displays Question number and Question
         questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
         let questionTitle = (currentQuestion.title);
         let questionTextHTML = document.getElementById("text");
@@ -118,8 +125,11 @@ function updateHtmlFromState() {
     }
 }
 
-/// Button listeners
+/**
+ * Button listeners (True / False / Play Again)
+ */
 function addListenersToButtons() {
+
     let buttonTrue = document.getElementById("true");
     buttonTrue.addEventListener("click", function () {
         updateState(true);
@@ -142,14 +152,12 @@ function addListenersToButtons() {
     })
 }
 
-/// Compares player answer to question answer and update state
-
-
-
-
+/**
+ * Updates current questions values
+ */
 function updateState(playerAnswer) {
     let questionNumber = state.questionNumber;
-let currentQuestion = (shuffledArray[questionNumber]);
+    let currentQuestion = (shuffledArray[questionNumber]);
     console.log('------------andy Line 170 Update State currentQuestion', currentQuestion);
 
     if (playerAnswer === currentQuestion.answer) {
@@ -160,10 +168,3 @@ let currentQuestion = (shuffledArray[questionNumber]);
     state.questionNumber++;
     state.scoreNumber++;
 };
-
-
-
-/// TO DO!
-// Add more text to end screen 
-// Add styling to game
-// Add random to questions
