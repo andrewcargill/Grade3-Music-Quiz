@@ -90,9 +90,12 @@ const state = {
 
 function nextQuestion() {
     let unusedQuestions = state.questions.filter(x => !x.used);
+    console.log('------------andy Line 96 unusedQuestions', unusedQuestions);
     let newQuestion = unusedQuestions[Math.floor(Math.random() * unusedQuestions.length)];
     newQuestion.activeQuestion = true; 
     return newQuestion;
+    
+    
 }
 
 
@@ -101,11 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
     addListenersToButtons();
 })
 
-let currentQuestion = nextQuestion();
+
 
 function updateHtmlFromState() {
-nextQuestion();
-currentQuestion;
+
+    let currentQuestion = nextQuestion();
 
 console.log('------------andy Line 110 currentQuestion', currentQuestion);
 
@@ -113,7 +116,6 @@ console.log('------------andy Line 110 currentQuestion', currentQuestion);
     
     let currentQuestionNumber = state.questionNumber;
         let totalNumberOfQuestions = state.questions.length;
-        let questionNumber = state.questionNumber;
         let questionNumberHTML = document.getElementById("question-num");
 
     if (state.questionNumber === state.questions.length) {
@@ -178,6 +180,9 @@ function addListenersToButtons() {
  * Updates .used 
  */
 function updateState(playerAnswer) {
+    let currentQuestion = state.questions.filter(x => x.activeQuestion);
+    console.log('------------andy Line 181 Update State currentQuestion', currentQuestion);
+    
     let currentQuestionNumber = state.questionNumber;
     state.questions[currentQuestionNumber].used = true;
     let questionAnswer = state.questions[currentQuestionNumber].answer;
@@ -187,6 +192,7 @@ function updateState(playerAnswer) {
     } else {
         state.questions[currentQuestionNumber].playerCorrect = false;
     }
+    currentQuestion.activeQuestion = false;
     state.questionNumber++;
     state.scoreNumber++;
     
