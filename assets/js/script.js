@@ -31,7 +31,7 @@ const state = {
             answer: true,
             playerAnswer: null,
             playerCorrect: null,
-            used: false,
+            used: true,
             activeQuestion: false,
         },
         {
@@ -39,7 +39,7 @@ const state = {
             answer: true,
             playerAnswer: null,
             playerCorrect: null,
-            used: false,
+            used: true,
             activeQuestion: false,
         },
         {
@@ -47,7 +47,7 @@ const state = {
             answer: true,
             playerAnswer: null,
             playerCorrect: null,
-            used: false,
+            used: true,
             activeQuestion: false,
         },
         {
@@ -55,7 +55,7 @@ const state = {
             answer: false,
             playerAnswer: null,
             playerCorrect: null,
-            used: false,
+            used: true,
             activeQuestion: false,
         },
         {
@@ -63,10 +63,10 @@ const state = {
             answer: false,
             playerAnswer: null,
             playerCorrect: null,
-            used: false,
+            used: true,
             activeQuestion: false,
         },
-        {
+     /*   {
             title: "A chord is created when you play more than one note/tone at the same time'",
             answer: true,
             playerAnswer: null,
@@ -80,8 +80,8 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
-            activeQuestion: false,
-        },
+            activeQuestion: false, 
+        },*/
     ]
 }
 
@@ -91,6 +91,7 @@ const state = {
 function nextQuestion() {
     let unusedQuestions = state.questions.filter(x => !x.used);
     let newQuestion = unusedQuestions[Math.floor(Math.random() * unusedQuestions.length)];
+    newQuestion.activeQuestion = true; 
     return newQuestion;
 }
 
@@ -100,11 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
     addListenersToButtons();
 })
 
-let Question = nextQuestion();
-
+let currentQuestion = nextQuestion();
 
 function updateHtmlFromState() {
-    nextQuestion();
+nextQuestion();
+currentQuestion;
+
+console.log('------------andy Line 110 currentQuestion', currentQuestion);
 
     
     
