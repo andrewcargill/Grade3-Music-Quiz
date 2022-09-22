@@ -8,6 +8,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: 'A trumpet is a woodwind instrument',
@@ -15,6 +16,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: 'Tempo is how fast a song is played',
@@ -22,6 +24,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "Hip hop originated in the 1980's",
@@ -29,6 +32,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "The Xylophone is a percussion instrument",
@@ -36,6 +40,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "The guitar has three main parts: The body, the neck and the head",
@@ -43,6 +48,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "The biggest drum in a drum kit is called the 'snare drum'",
@@ -50,6 +56,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "The white notes on the piano are tuned to: A B C D E F G H I..'",
@@ -57,6 +64,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "A chord is created when you play more than one note/tone at the same time'",
@@ -64,6 +72,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
         {
             title: "A hi-hat is an instrument",
@@ -71,6 +80,7 @@ const state = {
             playerAnswer: null,
             playerCorrect: null,
             used: false,
+            activeQuestion: false,
         },
     ]
 }
