@@ -19,7 +19,7 @@ let questions = [{
         playerCorrect: null,
         used: false,
         activeQuestion: false
-    }, 
+    },
     {
         title: 'Tempo is how fast a song is played',
         answer: true,
@@ -27,7 +27,7 @@ let questions = [{
         playerCorrect: null,
         used: false,
         activeQuestion: false
-    }, 
+    },
     {
         title: "Hip hop originated in the 1980's",
         answer: true,
@@ -68,13 +68,13 @@ let questions = [{
 function fyShuffle(arr) {
     let i = arr.length;
     while (--i > 0) {
-      let randIndex = Math.floor(Math.random() * (i + 1));
-      [arr[randIndex], arr[i]] = [arr[i], arr[randIndex]];
+        let randIndex = Math.floor(Math.random() * (i + 1));
+        [arr[randIndex], arr[i]] = [arr[i], arr[randIndex]];
     }
     return arr;
-  }
+}
 
-  let shuffledArray = fyShuffle(questions);
+let shuffledArray = fyShuffle(questions);
 
 /// On load up
 document.addEventListener("DOMContentLoaded", function () {
@@ -86,17 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
 /// Updates HTML for each question
 function updateHtmlFromState() {
 
-    
+    let questionNumber = state.questionNumber;
+    let currentQuestion = (shuffledArray[questionNumber]);
+    console.log('------------andy Line 92 shuffledArray', shuffledArray);
 
-    let currentQuestion = nextQuestion();
-    let totalNumberOfQuestions = state.questions.length;
+    console.log('------------andy Line 94 currentQuestion', currentQuestion);
+
+
+    let totalNumberOfQuestions = questions.length;
     let questionNumberHTML = document.getElementById("question-num");
 
     ///After last question screen
-    if (state.questionNumber === state.questions.length) {
+    if (state.questionNumber === questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
-        let numberOfCorrectAnswers = state.questions.filter(x => x.playerCorrect).length;
+        let numberOfCorrectAnswers = questions.filter(x => x.playerCorrect).length;
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
@@ -109,7 +113,7 @@ function updateHtmlFromState() {
         let questionTitle = (currentQuestion.title);
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML =
-            "Q" + state.scoreNumber + ": " + questionTitle;
+            "Q" + state.scoreNumber + ": " + currentQuestion.title;
     }
 }
 
@@ -137,6 +141,10 @@ function addListenersToButtons() {
 }
 
 /// Compares player answer to question answer and update state
+
+let questionNumber = state.questionNumber;
+let currentQuestion = (shuffledArray[questionNumber]);
+
 function updateState(playerAnswer) {
     let currentQuestion = state.questions.filter(x => x.activeQuestion);
     console.log('------------andy Line 170 Update State currentQuestion', currentQuestion);
