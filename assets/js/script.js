@@ -71,6 +71,16 @@ let questions = [{
     },
 ];
 
+/**
+ * TEsting
+ */
+
+let a = questions[1];
+console.log('------------andy Line 79 a', a);
+
+let b = state.scoreNumber - 1;
+console.log('------------andy Line 82 b', b);
+
 
 
 // https://sebhastian.com/fisher-yates-shuffle-javascript/
@@ -116,6 +126,7 @@ function updateHtmlFromState() {
         questionTextHTML.style.textAlign = "center";
         questionTextHTML.innerHTML =
             `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
+
     } else { ///Displays Question number and Question
         questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
         let questionTextHTML = document.getElementById("text");
