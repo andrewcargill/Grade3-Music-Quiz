@@ -66,58 +66,55 @@ const state = {
             used: true,
             activeQuestion: false,
         },
-     /*   {
-            title: "A chord is created when you play more than one note/tone at the same time'",
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-            activeQuestion: false,
-        },
-        {
-            title: "A hi-hat is an instrument",
-            answer: true,
-            playerAnswer: null,
-            playerCorrect: null,
-            used: false,
-            activeQuestion: false, 
-        },*/
+        /*   {
+               title: "A chord is created when you play more than one note/tone at the same time'",
+               answer: true,
+               playerAnswer: null,
+               playerCorrect: null,
+               used: false,
+               activeQuestion: false,
+           },
+           {
+               title: "A hi-hat is an instrument",
+               answer: true,
+               playerAnswer: null,
+               playerCorrect: null,
+               used: false,
+               activeQuestion: false, 
+           },*/
     ]
 }
 
-//find number of unused questions
-//pick a random number
 
+//Generate the next question
 function nextQuestion() {
     let unusedQuestions = state.questions.filter(x => !x.used);
     console.log('------------andy Line 96 unusedQuestions', unusedQuestions);
     let newQuestion = unusedQuestions[Math.floor(Math.random() * unusedQuestions.length)];
-    newQuestion.activeQuestion = true; 
+    newQuestion.activeQuestion = true;
     return newQuestion;
-    
-    
+
+
 }
 
-
+/// On load up
 document.addEventListener("DOMContentLoaded", function () {
     updateHtmlFromState();
     addListenersToButtons();
 })
 
 
-
+/// Updates HTML for each question
 function updateHtmlFromState() {
 
     let currentQuestion = nextQuestion();
+    console.log('------------andy Line 110 currentQuestion', currentQuestion);
 
-console.log('------------andy Line 110 currentQuestion', currentQuestion);
-
-    
-    
     let currentQuestionNumber = state.questionNumber;
-        let totalNumberOfQuestions = state.questions.length;
-        let questionNumberHTML = document.getElementById("question-num");
+    let totalNumberOfQuestions = state.questions.length;
+    let questionNumberHTML = document.getElementById("question-num");
 
+    ///After last question screen
     if (state.questionNumber === state.questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
@@ -125,31 +122,22 @@ console.log('------------andy Line 110 currentQuestion', currentQuestion);
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
-        questionTextHTML.innerHTML = 
-        `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>`;
+        questionTextHTML.innerHTML =
+            `<p text-align="center" >You scored: ${finalScore} out of ${totalNumberOfQuestions}!</p>`;
 
     } else {
-
-
-        ///Displays Q number and counter
-
-       // let currentQuestionNumber = state.questionNumber;
-       // let totalNumberOfQuestions = state.questions.length;
-       // let questionNumber = state.questionNumber;
-       // let questionNumberHTML = document.getElementById("question-num");
+    ///Displays Question number and Question
         questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
         let questionTitle = (state.questions[currentQuestionNumber].title);
-        ///Adds question to html
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.innerHTML =
-        "Q" + state.scoreNumber + ": " + questionTitle;
+            "Q" + state.scoreNumber + ": " + questionTitle;
 
     }
 
 }
-/**
- * True and False Buttons
- */
+
+/// Button listeners
 function addListenersToButtons() {
     let buttonTrue = document.getElementById("true");
     buttonTrue.addEventListener("click", function () {
@@ -165,7 +153,7 @@ function addListenersToButtons() {
     });
 
     let buttonPlayAgain = document.getElementById("play-again-button");
-    buttonPlayAgain.addEventListener("click", function(){
+    buttonPlayAgain.addEventListener("click", function () {
         console.log('------------andy hello');
         buttonPlayAgain.style.visibility = "hidden";
         state.questionNumber = 0;
@@ -174,15 +162,11 @@ function addListenersToButtons() {
     })
 }
 
-/**
- * Compares answer
- * Updates .playerCorrect
- * Updates .used 
- */
+/// Compares player answer to question answer and update state
 function updateState(playerAnswer) {
     let currentQuestion = state.questions.filter(x => x.activeQuestion);
     console.log('------------andy Line 181 Update State currentQuestion', currentQuestion);
-    
+
     let currentQuestionNumber = state.questionNumber;
     state.questions[currentQuestionNumber].used = true;
     let questionAnswer = state.questions[currentQuestionNumber].answer;
@@ -195,8 +179,6 @@ function updateState(playerAnswer) {
     currentQuestion.activeQuestion = false;
     state.questionNumber++;
     state.scoreNumber++;
-    
-
 };
 
 
