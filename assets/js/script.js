@@ -76,6 +76,7 @@ function fyShuffle(arr) {
 
 let shuffledArray = fyShuffle(questions);
 
+
 /// On load up
 document.addEventListener("DOMContentLoaded", function () {
     updateHtmlFromState();
@@ -85,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /// Updates HTML for each question
 function updateHtmlFromState() {
-
     let questionNumber = state.questionNumber;
     let currentQuestion = (shuffledArray[questionNumber]);
-    console.log('------------andy Line 92 shuffledArray', shuffledArray);
 
-    console.log('------------andy Line 94 currentQuestion', currentQuestion);
+    console.log('------------andy Line 92 currentQuestion', currentQuestion);
+    console.log('------------andy Line 93 questions', questions);
+    
 
 
     let totalNumberOfQuestions = questions.length;
@@ -142,23 +143,19 @@ function addListenersToButtons() {
 
 /// Compares player answer to question answer and update state
 
-let questionNumber = state.questionNumber;
-let currentQuestion = (shuffledArray[questionNumber]);
+
+
 
 function updateState(playerAnswer) {
-    let currentQuestion = state.questions.filter(x => x.activeQuestion);
+    let questionNumber = state.questionNumber;
+let currentQuestion = (shuffledArray[questionNumber]);
     console.log('------------andy Line 170 Update State currentQuestion', currentQuestion);
-
-    currentQuestion.used = true;
-    console.log('------------andy Line 176 currentQuestion.used', currentQuestion.used);
 
     if (playerAnswer === currentQuestion.answer) {
         currentQuestion.playerCorrect = true;
     } else {
         currentQuestion.playerCorrect = false;
     }
-
-    currentQuestion.activeQuestion = false;
     state.questionNumber++;
     state.scoreNumber++;
 };
