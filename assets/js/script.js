@@ -1,3 +1,8 @@
+
+if(!username){
+    window.location = '/index.html'
+}
+
 /**
  * Controls the game and Question number display
  */
@@ -90,8 +95,6 @@ function previousQuestionUserFeedback() {
     }
     
 }
-
-
 
 // https://sebhastian.com/fisher-yates-shuffle-javascript/
 // shuffles the 'questions' array
