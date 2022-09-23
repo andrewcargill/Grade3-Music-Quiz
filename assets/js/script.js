@@ -1,7 +1,10 @@
+/*
 
 if(!username){
     window.location = '/index.html'
 }
+
+*/
 
 /**
  * Controls the game and Question number display
