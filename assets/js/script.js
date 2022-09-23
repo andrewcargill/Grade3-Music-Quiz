@@ -150,11 +150,11 @@ function updateHtmlFromState() {
             `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
 
     } else { ///Displays Question number and Question
-        questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
+        questionNumberHTML.innerHTML =  + state.scoreNumber + "/ " + totalNumberOfQuestions;
         let questionTextHTML = document.getElementById("text");
         questionTextHTML.style.textAlign = "left";
         questionTextHTML.innerHTML =
-            "Q" + state.scoreNumber + ": " + currentQuestion.title;
+        currentQuestion.title;
     }
 }
 
