@@ -167,9 +167,6 @@ h2 {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 934px) {
-    body {
-        background-color: red;
-    }
 
     #game-container {
         width: 90vw;
@@ -190,12 +187,7 @@ h2 {
     }
     }
 
-   
-
     @media only screen and (min-width: 935px) {
-        body {
-            background-color: pink;
-        }
         #game-container {
             width: 90vw;
         }
@@ -223,9 +215,6 @@ h2 {
     }
 
     @media only screen and (max-width: 317px) {
-        body {
-            background-color: green;
-        }
 
         #game-container {
             width: 90vw;
