@@ -166,21 +166,36 @@ h2 {
     background-color: red;
 }
 
-@media (min-width: 480px) {
+@media only screen and (min-width: 480px) and (max-width: 934px) {
     body {
-        background-color: aqua;
+        background-color: red;
     }
 
-    text-display {
-        width: 400px;
+    #game-container {
+        width: 90vw;
+    }
+    #text-display {
+        width: 70vw;
+    }
     }
 
+    @media (min-width: 935px) {
+        body {
+            background-color: pink;
+        }
+        #game-container {
+            width: 90vw;
+        }
+        #text-display {
+            width: 437px;
+        }
     }
 
-    @media (max-width: 317px) {
+    @media only screen and (max-width: 317px) {
         body {
             background-color: green;
         }
+
         #game-container {
             width: 90vw;
         }
