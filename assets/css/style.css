@@ -174,20 +174,51 @@ h2 {
     #game-container {
         width: 90vw;
     }
+
+    h1 {
+        font-size: 40px;
+    }
     #text-display {
-        width: 70vw;
+        width: 60vw;
+    }
+    #true-false-container {
+        width: 60vw;
+    }
+    .t-f-button {
+        height: 180px;
+        width: 180px;
     }
     }
 
-    @media (min-width: 935px) {
+   
+
+    @media only screen and (min-width: 935px) {
         body {
             background-color: pink;
         }
         #game-container {
             width: 90vw;
         }
+
+        #question-score-container {
+            height: 20px;
+        }
+
         #text-display {
             width: 437px;
+            height: 132px;
+
+        }
+
+        #true-false-container {
+            width: 500px;
+        }
+
+        .t-f-button {
+            margin-top: 37px;
+            height: 10vh;
+            max-height: 200px;
+            width: 200px;
         }
     }
 
