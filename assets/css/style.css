@@ -74,6 +74,14 @@ h2 {
     border-width: 8px;
 }
 
+#wrong-answer-icon {
+    color: red;
+}
+
+#right-answer-icon {
+    color: green;
+}
+
 #previous-question-text {
     font-size: 14px;
     font-family: mr-eaves-xl-modern, sans-serif;

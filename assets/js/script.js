@@ -82,10 +82,10 @@ function previousQuestionUserFeedback() {
     let previousQuestionHTML = document.getElementById("previous-question-text");
     previousQuestionHTML.style.visibility = "visible";
     if (previousQuestion.playerCorrect === true) {
-        previousQuestionHTML.innerHTML = "Well done, that was correct! Try this one...";
+        previousQuestionHTML.innerHTML = `<i id="right-answer-icon" class="fa-solid fa-check"></i> Well done, that was correct!`;
         textDisplay.style.borderColor = "green";
     } else {
-        previousQuestionHTML.innerHTML = "Unlucky, that was wrong. Try this one..."
+        previousQuestionHTML.innerHTML = `<i id="wrong-answer-icon" class="fa-solid fa-xmark"></i> Unlucky, that was wrong. Try this one...`;
         textDisplay.style.borderColor = "red";
     }
     
