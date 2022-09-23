@@ -116,6 +116,16 @@ h2 {
     padding: 5px;
 }
 
+#log-out-button {
+    border-radius: 10px;
+    font-size: larger;
+    font-family: kallisto, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    visibility: hidden;
+    padding: 5px;
+}
+
 #button-next-q-container {
     height: auto;
     

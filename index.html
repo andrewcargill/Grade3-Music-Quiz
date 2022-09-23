@@ -27,14 +27,16 @@
                 <p>Enter a user name to get started, good luck!</p>
             </div>
             <div id="sign-in">
-                <label for="uname" required><b>Username</b></label>
-    <input type="text" placeholder="Enter a Username" name="uname" required>
+                <form id="username-form">
+                    <label for="uname" required><b>Username</b></label>
+                    <input id="username" type="text" placeholder="Enter a Username" name="uname" required>
+                </form>
             </div>
         </div>
-        
+
         <div id="true-false-container">
-            <button id="start-game" class="t-f-button border">Start game</button>
-            <button id="stop" class="t-f-button border">Stop</button>
+            <button id="start-game" class="t-f-button border" type="submit" form="username-form" >Start Game</button>
+            <button id="s" class="t-f-button border">Stop</button>
         </div>
 
     </div>

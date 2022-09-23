@@ -80,6 +80,8 @@ let questions = [{
 ];
 
 function previousQuestionUserFeedback() {
+    ///Players Name
+    
     /// Selects the previous question
     let previousQuestionNumber = state.questionNumber - 1;
     let previousQuestion = questions[previousQuestionNumber];
@@ -90,10 +92,10 @@ function previousQuestionUserFeedback() {
     let previousQuestionHTML = document.getElementById("previous-question-text");
     previousQuestionHTML.style.visibility = "visible";
     if (previousQuestion.playerCorrect === true) {
-        previousQuestionHTML.innerHTML = `<i id="right-answer-icon" class="fa-solid fa-check"></i> Well done, that was correct!`;
+        previousQuestionHTML.innerHTML = `<i id="right-answer-icon" class="fa-solid fa-check"></i> Well done ${username} that was correct!`;
         textDisplay.style.borderColor = "green";
     } else {
-        previousQuestionHTML.innerHTML = `<i id="wrong-answer-icon" class="fa-solid fa-xmark"></i> Unlucky, that was wrong. Try this one...`;
+        previousQuestionHTML.innerHTML = `<i id="wrong-answer-icon" class="fa-solid fa-xmark"></i> Unlucky ${username} that was wrong. Try this one...`;
         textDisplay.style.borderColor = "red";
     }
     
@@ -110,6 +112,9 @@ function fyShuffle(arr) {
     }
     return arr;
 }
+
+///Username
+let username = localStorage.getItem("username");
 
 //Calls on questions to be shuffled
 let shuffledArray = fyShuffle(questions);
@@ -143,6 +148,8 @@ function updateHtmlFromState() {
     if (state.questionNumber === questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
+        let logOutButton = document.getElementById('log-out-button');
+        logOutButton.style.visibility = 'visible';
         let previousQuestionHTML = document.getElementById("previous-question-text");
         previousQuestionHTML.style.visibility = "hidden";
         let numberOfCorrectAnswers = questions.filter(x => x.playerCorrect).length;
@@ -153,7 +160,7 @@ function updateHtmlFromState() {
         textDisplay.style.borderColor = "black";
         questionTextHTML.style.textAlign = "center";
         questionTextHTML.innerHTML =
-            `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
+            `${username}, you scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
 
     } else { ///Displays Question number and Question
         questionNumberHTML.innerHTML =  + state.scoreNumber + "/ " + totalNumberOfQuestions;
