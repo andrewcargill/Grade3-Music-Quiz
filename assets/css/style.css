@@ -114,6 +114,7 @@ h2 {
     font-style: normal;
     visibility: hidden;
     padding: 5px;
+    color: black;
 }
 
 #log-out-button {
@@ -124,6 +125,7 @@ h2 {
     font-style: normal;
     visibility: hidden;
     padding: 5px;
+    color: black;
 }
 
 #button-next-q-container {
@@ -170,12 +172,11 @@ h2 {
 #false {
     border: 3px solid black;
     background-color: red;
+    color: black;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 934px) {
-    body {
-        background-color: black;
-    }
+
     #game-container {
         width: 90vw;
     }

@@ -169,9 +169,6 @@ h2 {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 934px) {
-    body {
-        background-color: black;
-    }
     #game-container {
         width: 90vw;
     }
@@ -211,7 +208,7 @@ h2 {
 
         #text-display {
             width: 437px;
-            height: 132px;
+            height: 192px;
 
         }
 
@@ -247,5 +244,12 @@ h2 {
 
         #question-score-container {
             font-size: smaller;
+        }
+
+        .t-f-button {
+            margin-top: 15px;
+            height: 10vh;
+            max-height: 100px;
+            width: 100px;
         }
     }
