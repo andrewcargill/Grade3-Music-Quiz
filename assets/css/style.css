@@ -132,6 +132,8 @@ h2 {
 }
 
 #true-false-container {
+    width: 286px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -140,11 +142,10 @@ h2 {
 .t-f-button {
     text-transform: uppercase;
     text-align: center;
-    height: 30vw;
+    height: 120px;
     max-height: 300px;
-    width: 30vw;
+    width: 120px;
     max-width: 300px;
-    margin: 0 5vw 3vh 5vw;
     border: 0;
     font-size: larger;
     font-family: kallisto, sans-serif;
@@ -169,4 +170,33 @@ h2 {
     body {
         background-color: aqua;
     }
+
+    text-display {
+        width: 400px;
     }
+
+    }
+
+    @media (max-width: 317px) {
+        body {
+            background-color: green;
+        }
+        #game-container {
+            width: 90vw;
+        }
+
+        h2 {
+            font-size: small;
+        }
+
+        #text-display {
+            width: 200px;
+        }
+
+        #true-false-container {
+            width: 244px;
+        }
+
+        #question-score-container {
+            font-size: smaller;
+        }
