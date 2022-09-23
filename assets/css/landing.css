@@ -1,3 +1,253 @@
+button { cursor: pointer; }
+
 body {
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
+
+
+.border {
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+#game-container {
+    /*margin: 5vh 5vw;*/
+    max-width: 800px;
+    height: 95vh;
+}
+
+header {
+   /* margin: 3vh 5vw 6vh 5vw; */
+    margin-bottom: 3vh;
+    margin-top: 2vh;
+    padding: .5rem 1rem;
+    background-color: white;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: kallisto, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 15px;
+    font-family: ff-prater-serif-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 0;
+}
+
+#question-score-container {
+    text-align: center;
+    color: aliceblue;
+    margin: 0 30% 5% 30%;
+    padding: 2vw;
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#question-num {
+    font-size: 25px;
+}
+
+#previous-question-text {
+    
+    visibility: hidden;
+}
+
+#text-display {
+    /* margin-bottom: 5vh;*/
+     margin: auto;
+     width: 250px;
+     padding: .5rem 1rem;
+     border: 4px solid black;
+     height: 300px;
+}
+
+#sign-in {
+    /* margin-bottom: 5vh;*/
+     margin: auto;
+     width: auto;
+     padding: .5rem 1rem;
+     height: 100px;
+}
+
+
+#wrong-answer-icon {
+    color: red;
+}
+
+#right-answer-icon {
+    color: green;
+}
+
+#previous-question-text {
+    font-size: 14px;
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+#text {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: bold;
+    margin-top: 0;
+    font-family: mr-eaves-xl-modern, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#button-container {
+    text-align: center;
+}
+
+#play-again-button {
+    border-radius: 10px;
+    font-size: larger;
+    font-family: kallisto, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    visibility: hidden;
+    padding: 5px;
+}
+
+#button-next-q-container {
+    height: auto;
+    
+}
+
+#button-next-q {
+    display: block;
+    margin: auto;
+    background-color: aquamarine;
+}
+
+#true-false-container {
+    width: 286px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.t-f-button {
+    text-transform: uppercase;
+    text-align: center;
+    height: 120px;
+    max-height: 300px;
+    width: 120px;
+    max-width: 300px;
+    border: 0;
+    font-size: larger;
+    font-family: kallisto, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#true {
+    border: 3px solid black;
+    background-color: green;
+    color: white;
+}
+
+#false {
+    border: 3px solid black;
+    background-color: red;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 934px) {
+    body {
+        background-color: black;
+    }
+    #game-container {
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    #question-num {
+        color: black;
+        background-color: aliceblue;
+    }
+
+    #text-display {
+        width: 60vw;
+    }
+    #true-false-container {
+        width: 60vw;
+    }
+    .t-f-button {
+        height: 180px;
+        width: 180px;
+    }
+    }
+
+    @media only screen and (min-width: 935px) {
+        #game-container {
+            width: 90vw;
+        }
+        #question-num {
+            color: black;
+        }
+        
+        #question-score-container {
+            height: 20px;
+        }
+
+        #text-display {
+            width: 437px;
+            height: 132px;
+
+        }
+
+        #true-false-container {
+            width: 500px;
+        }
+
+        .t-f-button {
+            margin-top: 37px;
+            height: 10vh;
+            max-height: 200px;
+            width: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 317px) {
+
+        #game-container {
+            width: 90vw;
+        }
+
+        h2 {
+            font-size: small;
+        }
+
+        #text-display {
+            width: 200px;
+        }
+
+        #true-false-container {
+            width: 244px;
+        }
+
+        #question-score-container {
+            font-size: smaller;
+        }
+    }
