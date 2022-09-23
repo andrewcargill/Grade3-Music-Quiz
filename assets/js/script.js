@@ -188,15 +188,23 @@ function addListenersToButtons() {
         updateHtmlFromState();
     });
 
+    let buttonLogOut = document.getElementById("log-out-button");
+    buttonLogOut.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+
     let buttonPlayAgain = document.getElementById("play-again-button");
     buttonPlayAgain.addEventListener("click", function () {
         buttonPlayAgain.style.visibility = "hidden";
+        buttonLogOut.style.visibility = "hidden";
         state.questionNumber = 0;
         state.scoreNumber = 1;
         fyShuffle(questions);
         updateHtmlFromState();
         
     });
+
+
 }
 
 /**
