@@ -71,33 +71,15 @@ let questions = [{
     },
 ];
 
-/**
- * Testing
- */
-
-let testQuestion = questions[0];
-console.log('------------andy Line 79 Test question', testQuestion);
-
-let b = state.scoreNumber - 1;
-console.log('------------andy Line 82 b', b);
-
-let testQuestionNumber = 2; ///change to questionNumber
-
-if (testQuestionNumber === 0) {
-    console.log("number is 0");
-}else {
-    console.log("number is above 0");
-    previousQuestionUserFeedback();
-}
-
 function previousQuestionUserFeedback() {
     /// Selects the previous question
-    let previousQuestionNumber = testQuestionNumber - 1;
+    let previousQuestionNumber = state.questionNumber - 1;
     let previousQuestion = questions[previousQuestionNumber];
     console.log('------------andy Line 96 previousQuestion', previousQuestion);
     
     /// Displays info
     let previousQuestionHTML = document.getElementById("previous-question-text");
+    previousQuestionHTML.style.visibility = "visible";
     if (previousQuestion.playerCorrect === true) {
         previousQuestionHTML.innerHTML = "Well done, that was correct! Try this one...";
     } else {
@@ -135,15 +117,25 @@ document.addEventListener("DOMContentLoaded", function () {
  * Updates HTML for each question and end of game
  */
 function updateHtmlFromState() {
+
     let questionNumber = state.questionNumber;
     let currentQuestion = (shuffledArray[questionNumber]);
     let totalNumberOfQuestions = questions.length;
     let questionNumberHTML = document.getElementById("question-num");
 
+    if (questionNumber >= 1) {
+        console.log("number is above 0");
+        previousQuestionUserFeedback(); 
+    }else {
+        console.log("number is 0");
+    }
+
 ///When end of game is reached - score is displayed and play again button
     if (state.questionNumber === questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
+        let previousQuestionHTML = document.getElementById("previous-question-text");
+        previousQuestionHTML.style.visibility = "hidden";
         let numberOfCorrectAnswers = questions.filter(x => x.playerCorrect).length;
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";

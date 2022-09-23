@@ -55,6 +55,10 @@ h2 {
     visibility: hidden;
 }
 
+#previous-question-text {
+    visibility: hidden;
+}
+
 #text-display {
     margin: 0 5vw 5vh 5vw;
     padding: .5rem 1rem;
