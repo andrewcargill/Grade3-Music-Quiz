@@ -75,15 +75,18 @@ function previousQuestionUserFeedback() {
     /// Selects the previous question
     let previousQuestionNumber = state.questionNumber - 1;
     let previousQuestion = questions[previousQuestionNumber];
-    console.log('------------andy Line 96 previousQuestion', previousQuestion);
+    /// Finds text-display HTML element
+    let textDisplay = document.getElementById("text-display")
     
     /// Displays info
     let previousQuestionHTML = document.getElementById("previous-question-text");
     previousQuestionHTML.style.visibility = "visible";
     if (previousQuestion.playerCorrect === true) {
         previousQuestionHTML.innerHTML = "Well done, that was correct! Try this one...";
+        textDisplay.style.borderColor = "green";
     } else {
         previousQuestionHTML.innerHTML = "Unlucky, that was wrong. Try this one..."
+        textDisplay.style.borderColor = "red";
     }
     
 }
@@ -140,6 +143,8 @@ function updateHtmlFromState() {
         let finalScore = numberOfCorrectAnswers;
         questionNumberHTML.innerHTML = "End Of Game";
         let questionTextHTML = document.getElementById("text");
+        let textDisplay = document.getElementById("text-display")
+        textDisplay.style.borderColor = "black";
         questionTextHTML.style.textAlign = "center";
         questionTextHTML.innerHTML =
             `You scored: ${finalScore} out of ${totalNumberOfQuestions}!`;
