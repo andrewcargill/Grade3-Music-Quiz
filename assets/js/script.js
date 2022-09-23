@@ -130,6 +130,7 @@ function updateHtmlFromState() {
     } else { ///Displays Question number and Question
         questionNumberHTML.innerHTML = "Question: " + state.scoreNumber + "/ " + totalNumberOfQuestions;
         let questionTextHTML = document.getElementById("text");
+        questionTextHTML.style.textAlign = "left";
         questionTextHTML.innerHTML =
             "Q" + state.scoreNumber + ": " + currentQuestion.title;
     }
@@ -159,6 +160,7 @@ function addListenersToButtons() {
         state.scoreNumber = 1;
         fyShuffle(questions);
         updateHtmlFromState();
+        
     });
 }
 

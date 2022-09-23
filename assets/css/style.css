@@ -59,7 +59,6 @@ h2 {
     margin: 0 5vw 5vh 5vw;
     padding: .5rem 1rem;
     min-height: 100px;
-    
 }
 
 #button-container {
@@ -90,7 +89,7 @@ h2 {
 }
 
 .t-f-button {
-   
+    text-transform: uppercase;
     text-align: center;
     height: 30vw;
     max-height: 300px;
