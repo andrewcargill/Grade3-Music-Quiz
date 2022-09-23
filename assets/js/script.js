@@ -141,7 +141,7 @@ function updateHtmlFromState() {
         previousQuestionHTML.style.visibility = "hidden";
         let numberOfCorrectAnswers = questions.filter(x => x.playerCorrect).length;
         let finalScore = numberOfCorrectAnswers;
-        questionNumberHTML.innerHTML = "End Of Game";
+        questionNumberHTML.innerHTML = "Game Over";
         let questionTextHTML = document.getElementById("text");
         let textDisplay = document.getElementById("text-display")
         textDisplay.style.borderColor = "black";
