@@ -20,7 +20,7 @@ let questions = [{
         title: 'A trumpet is a woodwind instrument',
         answer: false,
         playerAnswer: null,
-        playerCorrect: null,
+        playerCorrect: true,
     },
     {
         title: 'Tempo is how fast a song is played',
@@ -58,7 +58,7 @@ let questions = [{
         playerCorrect: null,
     },
     {
-        title: "A chord is created when you play more than one note/tone at the same time'",
+        title: "A chord is created when you play more than one note/tone at the same time",
         answer: true,
         playerAnswer: null,
         playerCorrect: null,
@@ -72,14 +72,39 @@ let questions = [{
 ];
 
 /**
- * TEsting
+ * Testing
  */
 
-let a = questions[1];
-console.log('------------andy Line 79 a', a);
+let testQuestion = questions[0];
+console.log('------------andy Line 79 Test question', testQuestion);
 
 let b = state.scoreNumber - 1;
 console.log('------------andy Line 82 b', b);
+
+let testQuestionNumber = 2; ///change to questionNumber
+
+if (testQuestionNumber === 0) {
+    console.log("number is 0");
+}else {
+    console.log("number is above 0");
+    previousQuestionUserFeedback();
+}
+
+function previousQuestionUserFeedback() {
+    /// Selects the previous question
+    let previousQuestionNumber = testQuestionNumber - 1;
+    let previousQuestion = questions[previousQuestionNumber];
+    console.log('------------andy Line 96 previousQuestion', previousQuestion);
+    
+    /// Displays info
+    let previousQuestionHTML = document.getElementById("previous-question-text");
+    if (previousQuestion.playerCorrect === true) {
+        previousQuestionHTML.innerHTML = "Well done, that was correct! Try this one...";
+    } else {
+        previousQuestionHTML.innerHTML = "Unlucky, that was wrong. Try this one..."
+    }
+    
+}
 
 
 
