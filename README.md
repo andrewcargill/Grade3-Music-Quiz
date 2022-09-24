@@ -1,13 +1,12 @@
-# FALSE Urban Designer Clothing 
-FALSE Urban Designer Clothing is a site to promote a new high-end clothing brand called 'FALSE' which will be launching its first clothing range during Paris Fashion Week 2022. Users will find out when the event is taking place and be encouraged to sign up for 'exclusive access' to a live-stream event.  
+# Grade 3 Music Quiz
+This game is designed to assist music teachers. Students will use the game to learn and test their knowledge.
 
-The site is targeted towards upper middle class / upper class men and women aged 20-40 years old. The demographic have a passion for, and invest in, high-end fashion. They demand modern, fresh and exciting clothing. 
+The target audience for the game is young people of 8-9 years old. The game will be used on mobile devices and on school computers. They will have learnt much of the questions covered in the game during their music education lessons. This will be used as a re-cap, revision or pre-test resource.
 
-The sites design is all geared around the companies need to be dynamic and stand out. 
+The games design is fun, welcoming and purposefully simplistic in its visual design. 
 
-The brief in short: Engage. Intrigue. Inform. Use Red.
+The visual focus is on the questions and feeding back to the user after each question is answered. Each time the game is played the questions are presented in a new random order to keep the user engaged. Feedback is given after each question. 
 
-The design layout aims to challenge conventions. We reference minamilist / abstract art and use negative space to give a simple and uncomplicated, but impacting result. 
 
 ![Website on various devices](/assets/images/readme_main_image.jpg)
 
