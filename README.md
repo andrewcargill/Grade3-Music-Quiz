@@ -1,119 +1,76 @@
 # Grade 3 Music Quiz
-This game is designed to assist music teachers. Students will use the game to learn and test their knowledge.
+This game is designed as an educational aid for music teachers. Students will use the game to refresh their knowledge of topics covered in music lessons.
 
-The target audience for the game is young people of 8-9 years old. The game will be used on mobile devices and on school computers. They will have learnt much of the questions covered in the game during their music education lessons. This will be used as a re-cap, revision or pre-test resource.
+The target audience for the game is young people of 8-9 years old. The game will be used on mobile devices and on school computers. The game could be used as a re-cap, revision or pre-test resource.
 
-The games design is fun, welcoming and purposefully simplistic in its visual design. 
+The games design is fun, welcoming and purposefully simplistic in its visual design.
 
-The visual focus is on the questions and feeding back to the user after each question is answered. Each time the game is played the questions are presented in a new random order to keep the user engaged. Feedback is given after each question. 
+The visual focus is the question text and feeding back feedback to the user after each question is answered. This personal feedback helps the learner progress through the game and when they reach the end they are encouraged to try again. 
+
+Each time the game is played the questions are presented in a new random order to keep the user engaged. 
 
 
-![Website on various devices](/assets/images/readme_main_image.jpg)
+![Website on various devices](/assets/images/readme_game.jpg)
 
 ## Features
 ***
 
 ### Existing Features
-![Navigation](/assets/images/readme_navigation.png)
+![Welcome and Log in screen](/assets/images/readme_login.jpg)
 
-- Navigation
-    -  Designed to be fixed to the top of the screen for easy access.
-    -  User feedback through text and background colour change on hover.
-    - To retain a good design the space between menu items change in response to the screen width.
-    - On mobile devices the menu items are centered and the logo removed to retain minimalist feel.
-    -  Simple design so as not to distract.
+- Start screen
+    -  Designed so that you can only enter the game with a username.
+    -  A simple design with a warm welcome and clear instructions.
+    - If the user clicks 'start' without entering a name an alert is shown.
 
 
-![Home Page](/assets/images/readme_home.png)
+![Header](/assets/images/readme_title.jpg)
 
-- Home
-    - Instant impact is gained by presenting the user with large blocks of colour. 
-    - Designed for the white box to be off-center on larger screens and centered on mobile devices. 
-    - White container goes off the bottom of the screen to encourage the user to explore and ask "What comes next?".
-    - Minimal text and clean design to stand out against other design companies. 
-    - Images are not used as this is a pre-release website. The company wants to promote the feelings of 'mystery' and 'what's coming?'.
+- Header
+    - On entering the game the users name is displayed in the header.
+    - The font evokes the feelings of something modern and fun.
+    - Sub-text reinforces why it is good for the user to train with the game.
 
 
-![Home text zoom](/assets/images/readme_home2.png)
+![Question display](/assets/images/readme_questions.jpg)
 
-- Home text
-    - Clear company message.
-    - Text zooms and changes colour on mouse over.
+- Question container
+    - The white background against the busy crowd scene in the background draws the users eyes to the questions
+    - The font that displays the questions is rounded and soft to project a feeling of friendliness and warmth. 
+    - The large question text makes them easy to read. 
+    - On answering a question the user receives feedback, dependent on their answer, via border color changes and the text feedback.
+    - The questions are shuffled each time the game is played to retain user engagement.
 
-![Tree Transition](/assets/images/readme_tree.png)
-- Tree transition
-    - This element helps draw the user down into the launch section of the website. 
-    - A soft transition from the vivid to the more relaxing atmosphere of the white background.
+![End screen](/assets/images/readme_question_display.jpg)
+- End screen
+    - Final score is presented and the option to play again. 
+    - Design is simply text with a the 'play again' button that uses the same font as the title for consistency.  
 
-![Launch page](/assets/images/readme_launch.png)
-- Launch Section
-    - The white background helps users to relax and take in the information.
-    - The font of Paris Fashion Week gives the message of quality and status. The text enhances the feeling that this is a prestigious event and something to be part of.
-    - As the only black text on the screen, the user is drawn to the date and location. This is the most important information on the screen.
-    - The use of no imagery is intentional, as it keeps the user neutral. We do not want them to judge if they like or dislike the brand until they see the launch event.
-    - The video will only run when the user clicks play. The video is 40 seconds long, as we do not want to distract them away from the site. 
-
-![Sign up page](/assets/images/readme_signup2.png)
-- Sign Up Section
-    - The site switches back to dynamic minimalist design to stimulate the user and encourage action to be taken.
-    - The user to taken back to the emotion felt on the home page.
-    - The message is simple and clear.
-    - It is important to not 'over sell', as this is not liked by the target demographic.
-    - The design is fluid. An example of this are the white boxes containing the input elements. These stretch as the screen width increases to maintain the design aesthetic.
-    - The submit button features the word 'join' as it is softer and more playful than 'submit'.
-    - User engagement is enhanced through a mouse-over colour change on the submit button.
-    - To maintain the design on mobile devices the elements re-oder and the triangle graphic is hidden.
-
-
-![About Us](/assets/images/readme_aboutus.png)
-- About Us
-    - The White background makes the text easy to read.
-    - A Soft type font makes for a friendly feel.
-    - To help retain the user the page uses negative space. This is enhanced via minumal text and placing the main image un-aligned. The 2022 collection logo frames the page and helps enforce the design concept.
-    - Flexible margins are used to retain the design over various screen sizes.
-    - On mobile devices the elements re-order and stack.
-
-
-![Retailers](/assets/images/readme_retailers.png)
-
-- Retailers
-    - This section of the site promotes the retailers who will be re-selling the clothes.
-    - A red background serves as a call-to-action to the user. Users are softly encouraged to visit the retailers.
-    - A red rose brings warm and emotion to the page. 
-    - The feeling of space is created via the spacing between the pages elements. The left margin frames the design and the rose floats to the right.
-    - User interaction can be found with a mouse over color change on the 'visit website' link under each retailer
-    - On mobile devices the elements re-order, stack and center. 
-
-
-![Social media](/assets/images/readme_socialmedia.png)
-
-- Social Media
-    - The social media icons encourage engagement through mouse-over color change.
-    - They sit in the footer of the site so as not to distract from the site's current goals.
+![Buttons](/assets/images/readme_buttons.jpg)
+- True or False buttons
+    - The buttons are clear and use the same font as the game title for consistency.
+    - The log out button is smaller, so as not to distract from the game, but always visible to the user should the want to leave the game. 
 
 ## Testing
 ****
-Extensive testing has been carried out to ensure that the site functions as intended. A single scroll page design was utilized to make navigating the site intuitive, and navigation is present for users who wish to go directly to a specific section of the site. 
 
-The site layout of landing page > Launch information > sign up > retailers creates a natural flow for the user. An average user will want to see this information and in this order. 
+Testing of the game has been carried out on various devices and browsers. In terms of testing with the target audience, this was carried out throughout the project with the help of my eight year-old daughter and her friends.
 
-Color is used to stimulate the user, this to create feelings of anticipation and challenge the normal perceptions of 'what a website should look like'. This is intentional, as the company wants to show potential customers that they are not afraid to break the rules, that they are about to launch a clothing range that is something new and something exciting. Fashion and art is all about stimulation. Presenting challenges and emotions for the viewer. This website needed to do this, but in a way that did not leave the user feeling stranded or lost. Splitting the website into sections and alternating white and red backgrounds keeps the user engaged and supports their journey through the website. 
+I was a music teacher for eight years and feel that this game meets the educational goals of the project, it helps students test their knowledge, and through repetition their knowledge will increase. The statements in the questions may also trigger discussion on musical instruments, theory and music history with teachers or friends. 
 
-Soft feeling fonts are used across the website to act as a friendly voice against the dynamic design and color. The event information on the landing page is the only place where more impactive font is used, so as to be direct clear and not ignored.  
+The game was built from mobile up as this is the main way the game will I envisage it being used. On laptops and larger monitors the game scales up to a fixed width to give the user a feeling of playing a mobile device.
 
-The site functions well on mobile and desktop devices. Four different screen widths were used to ensure the site looks good on all platforms. On mobile devices, color and horizontal space are the main elements used to create an impactful site, whereas for the larger screens, imaginative placements of text and images enhance the sites message.
+The design uses the background image of a crowd at a large concert to provoke feelings of energy and help the user recall the deep positive emotions we have when listening or watching music.
+
+The title of the game and the buttons use a font that is modern and energetic, while the questions and feedback text us more rounded and friendlier to help create a warm and comfortable in this learning environment. The tone of the text is relaxed and welcoming to reinforce this design goal.
 
 ### Challenges, Bugs and fixes
 
-The scaling of the site was very challenging. I extensively explored the various measurement units that could be used to control scaling (such: as px,vw,rem) and strived to use them to support my design goals for the site. 
+I had many challenges while completing this project. One was how to create a random order for the questions, I really wanted the game to be something that the user would play more than once. I tried a few different ways - but then discovered shuffling the array!  Shuffling the array at the start of each game was an excellent solution! 
 
-I created my wireframes using Adobe XD. Trying to translate those wireframes into reality proved challenging, as in many sections of the site the elements move as the screen size enlarges and then the elements re-order when they are scaled down to mobile devices. Flex  helped  me to create the desired effect.
+With this project I decided that the code was more important than the design. So I began with a basic design concept and focused on learning javascript with the goal of getting a nice, simple and stable game complete. It was only on the once this was complete that I began adding design and further functions. This method worked well, but as a person who really enjoys the visual aspect of design I really felt like the end game missed that bit of design spark. 
 
-Padding and margins are extremely useful! When I started the project, I was still a little unsure about how and when to use them. As the building progressed,  and my understanding grew, I could see that my code was getting cleaner and my solutions were getting simpler.
-
-I grew to rely heavily on Google Inspect. The ability to identify elements, edit live and quickly identify specific code lines created a productive work flow.
-
-The site is tested on Google Inspect using the various mobile phone emulations, and I used a MacBook Pro (2017) with a large external monitor for testing the large scaling of the site.  The site has been tested on Google Chrome, Safari and Brave.
+With more time I would love to enhance user feedback through sounds and animation, but I understand that this is coding education and it is important that for my own learning I focus most of my project time on learning the languages. Which I feel I have successfully.
 
 There were various small bugs and fixes along the way, which are documented in the GitHub commit history.
 
@@ -124,7 +81,8 @@ There were various small bugs and fixes along the way, which are documented in t
     - No errors were found when passing through the official (Jigsaw) validator
 - Lighthouse
     - The site scored very well.
-![Lighthouse Results](/assets/images/readme_lighthouse.png)
+
+![Lighthouse Results](/assets/images/readme_lighthouse.jpg)
 
 ### Unfixed Bugs
 
@@ -138,7 +96,7 @@ No unfixed bugs
     - From the left hand menu select Pages.
     - Click on Branch and select main and then save.
 
-Here is a live link to the site [FALSE Urban Designer Clothing](https://andrewcargill.github.io/false/)
+Here is a live link to the site [Grade 3 Music Quiz](https://andrewcargill.github.io/music-quiz/)
 
 ## Credits
 ***
