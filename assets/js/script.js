@@ -1,10 +1,9 @@
-/*
 
-if(!username){
-    window.location = '/index.html'
-}
+///Username
+let username = localStorage.getItem("username");
 
-*/
+
+
 
 /**
  * Controls the game and Question number display
@@ -113,8 +112,7 @@ function fyShuffle(arr) {
     return arr;
 }
 
-///Username
-let username = localStorage.getItem("username");
+
 
 //Calls on questions to be shuffled
 let shuffledArray = fyShuffle(questions);
@@ -122,6 +120,9 @@ let shuffledArray = fyShuffle(questions);
 
 /// On load up
 document.addEventListener("DOMContentLoaded", function () {
+    if(!username){
+        window.location = '/index.html'
+    }
     updateHtmlFromState();
     addListenersToButtons();
 });

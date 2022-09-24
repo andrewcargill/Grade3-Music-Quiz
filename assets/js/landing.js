@@ -21,7 +21,7 @@ function welcomeHTML() {
    Hello and Welcome
 </p>
 <p>This game will test your music knowledge.</p>
-<p>Enter your name and choose a level!</p>
+<p>Enter your name to start and GOOD LUCK!</p>
 <div id="sign-in">
    `;
 };
