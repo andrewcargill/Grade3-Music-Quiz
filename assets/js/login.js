@@ -3,13 +3,10 @@ let username = document.getElementById("username");
 let players_username = username.value;
 let textContainer = document.getElementById("text");
 
-
-/// start up
-
+/// DOM Loading
 document.addEventListener("DOMContentLoaded", function () {
    welcomeHTML();
    buttonListeners();
-   ///addListenersToButtons();
 });
 
 
