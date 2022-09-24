@@ -21,7 +21,7 @@ function welcomeHTML() {
    Hello and Welcome
 </p>
 <p>This game will test your music knowledge.</p>
-<p>First off, enter a username</p>
+<p>Enter your name and choose a level!</p>
 <div id="sign-in">
    `;
 };
@@ -41,11 +41,11 @@ function usernameWelcomeHTML() {
 /// Listeners
 function buttonListeners() {
 let startGame = document.getElementById("start-game");
-startGame.addEventListener("click", function() {
-
-   //window.localStorage.setItem("username", username.value);
-   //window.location.href = "game.html";
-   usernameWelcomeHTML();
+startGame.addEventListener("click", function(event) {
+event.preventDefault()
+   window.localStorage.setItem("username", username.value);
+   window.location.href = "game.html";
+   //usernameWelcomeHTML();
     
 });
 
