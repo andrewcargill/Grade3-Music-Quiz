@@ -17,11 +17,11 @@ function welcomeHTML() {
    textContainer.style.textAlign = "center";
    textContainer.innerHTML =`
    <p>
-   Hello and Welcome!
+   Hello and Welcome
 </p>
 <p>This game will test your music knowledge.</p>
-<p>First off, enter a username! </p>
-   
+<p>First off, enter a username</p>
+<div id="sign-in">
    `;
 };
 
