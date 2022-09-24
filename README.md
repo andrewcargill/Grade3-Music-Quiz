@@ -108,33 +108,31 @@ Here is a live link to the site [Grade 3 Music Quiz](https://andrewcargill.githu
 ***
 
 
-This project contains no external code. All the code in this project was written by myself. I used tutorials or forums to help me understand specific parts of code to solve design or functional challenges. 
+This project contains some external code which is noted in the files where used. All the code in this project was written by myself. I used tutorials or forums to help me understand specific parts of code to solve design or functional challenges. I must also say a big thanks to the tutor 'Ed' for helping me understand Javascript when it was getting tough and my mentor Jubril for great advice and encouragement.
 
 ### Content
 - Font are from [Adobe Fonts](https://fonts.adobe.com/fonts) and [Google Fonts](https://fonts.google.com/about)
- - Information was taken from [Paris Fashion Week](https://www.cqlcorp.com/insights/6-step-guide-to-using-adobe-fonts-on-your-next-web-project/)
-- To refresh HTML Semantics I read [developer.mozilla.com](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML
+- How to submit and form from a button outside of the form [Hashrocket](https://til.hashrocket.com/posts/v2s2gxgifj-submit-a-form-with-a-button-outside-the-form)
+- Adding a favicon [w3c](https://www.w3schools.com/howto/howto_html_favicon.asp#:~:text=A%20favicon%20is%20a%20small,simple%20image%20with%20high%20contrast
 )
-- For font size guidelines I referenced [smashing magazine](https://www.smashingmagazine.com/2018/06/reference-guide-typography-mobile-web-design/#:~:text=In%20general%2C%20the%20rule%20of,readability%20for%20visually%20impaired%20readers.)
- - Tutorial on embedding video was from [w3schools](https://www.w3schools.com/html/html5_video.asp)
- - Various image tutorials were: [object fit](https://www.w3schools.com/css/css3_object-fit.asp), [image cropping](https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit)
- - The icons in the footer were taken from [Font Awsome](https://fontawesome.com/)
- - Information on [measure units](https://www.w3schools.com/cssref/css_units.asp)
- - Reference for [create centered menu](https://www.w3schools.com/howto/howto_css_topnav_centered.asp)
- - Reference for [Html Forms](https://www.w3schools.com/html/html_forms.asp)
- - Reference for Flex box [ccs-tricks](https://css-tricks.com/responsive-layouts-fewer-media-queries/) and [css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
- - For smooth scroll I referenced [gomakethings.com](https://gomakethings.com/smooth-scrolling-links-with-only-css/
+- Box shadows [Getcssscan](https://getcssscan.com/css-box-shadow-examples)
+- Javascript href links [w3c](https://www.w3schools.com/howto/howto_js_redirect_webpage.asp)
+- Javascript element border color change [tutorialkart](https://www.tutorialkart.com/javascript/how-to-change-border-color-of-html-element-in-javascript/)
+- Javascript objects [logrocket](https://www.w3schools.com/js/js_objects.asp
 )
-- Reference for screen sizes was from [browserstack](https://www.browserstack.com/guide/responsive-design-breakpoints
-)
-- Reference for hidding text or elements was from [moz.com](https://moz.com/blog/guide-to-hidden-text)
+- multiple classes to a HTML element [stackoverflow](https://stackoverflow.com/questions/8722163/how-to-assign-multiple-classes-to-an-html-container)
+- Reference for border padding [w3c](https://www.w3schools.com/css/css3_borders.asp)
+- Aligning div elements reference [w3c](https://www.w3schools.com/css/css_align.asp)
+- Working with objects and values [Stack overflow](https://stackoverflow.com/questions/4090491/how-to-get-the-first-element-of-an-array
+https://www.educative.io/answers/how-to-get-keys-values-and-entries-in-javascript-object)
+- Working with counting lengths in an array [mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+- Randomly selecting [stackoverflow](https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array)
+- Creating a counter [stewyearth](https://dev.to/stewyearth/making-a-simple-counter-in-javascript-html-2ici)
+- show and hide elements in Javascript [bobbyhadz](https://bobbyhadz.com/blog/javascript-hide-show-element-by-id)
+
+
+
 
 ### Media
- - Images on the site are from [iStock by Getty Image](https://istockphoto.com)
- - Music in the video was made by and used with the permission of [Dark Arts Club](https://www.instagram.com/the_dark_arts_club/?hl=en)
- - The video was made using [Adobe Premiere Pro](https://www.adobe.com/se/products/premiere.html?gclid=Cj0KCQjw39uYBhCLARIsAD_SzMRYSAMcGSQefo5KXrvKOlVqj9uKkJNZbPqa40NO4uIK0u34Q0byUKcaAlzCEALw_wcB&mv=search&mv=search&sdid=LQLZT7BT&ef_id=Cj0KCQjw39uYBhCLARIsAD_SzMRYSAMcGSQefo5KXrvKOlVqj9uKkJNZbPqa40NO4uIK0u34Q0byUKcaAlzCEALw_wcB:G:s&s_kwcid=AL!3085!3!340839217843!e!!g!!adobe%20premiere!1469953160!58520344553)
- - Sound was edited using [Logic Pro X](https://www.apple.com/logic-pro/)
- - Images were edited using [Adobe Photoshop](https://www.adobe.com/se/products/photoshop/landpb.html?gclid=Cj0KCQjw39uYBhCLARIsAD_SzMSAro3DTlHKXUSHb9Btxli6K7nEZ0ej3UpqYP7wLy-sSvTD_4f3DPYaAh2CEALw_wcB&mv=search&mv=search&sdid=LZ32SYVR&ef_id=Cj0KCQjw39uYBhCLARIsAD_SzMSAro3DTlHKXUSHb9Btxli6K7nEZ0ej3UpqYP7wLy-sSvTD_4f3DPYaAh2CEALw_wcB:G:s&s_kwcid=AL!3085!3!597384934920!e!!g!!adobe%20photoshop!1469952956!58520335113)
- - Wireframes were created using [Adobe XD](https://www.adobe.com/products/xd.html)
- - Tree transition image was an image I modified from [Poster Poster](http://www.posterposter.org/road-letters-typographic-posters/) and created by [Diego Machado](https://www.behance.net/digous)
+ - Crowd image is a sample image from [freepik](https://www.freepik.com/)
 
