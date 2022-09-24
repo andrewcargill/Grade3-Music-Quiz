@@ -76,6 +76,36 @@ let questions = [{
         playerAnswer: null,
         playerCorrect: null,
     },
+    {
+        title: "Verse, intro and bridge are parts of a song",
+        answer: true,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "A microphone does not contain a magnet",
+        answer: false,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "BPM is stands for 'beats per minute'",
+        answer: true,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "A violin has 4 strings",
+        answer: true,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
+    {
+        title: "Elvis was born in England",
+        answer: false,
+        playerAnswer: null,
+        playerCorrect: null,
+    },
 ];
 
 function previousQuestionUserFeedback() {
@@ -121,7 +151,7 @@ let shuffledArray = fyShuffle(questions);
 /// On load up
 document.addEventListener("DOMContentLoaded", function () {
     if(!username){
-        window.location = '/index.html'
+       window.location = '/index.html'
     }
     updateHtmlFromState();
     addListenersToButtons();
