@@ -51,6 +51,12 @@ Each time the game is played the questions are presented in a new random order t
     - The buttons are clear and use the same font as the game title for consistency.
     - The log out button is smaller, so as not to distract from the game, but always visible to the user should the want to leave the game. 
 
+![Favicon](/assets/images/readme_favicon.jpg)
+- Favicon
+    - Young people love things to feel like 'the real thing' and they are quick to notice if something looks unprofessional. 
+    - The favicon is a small detail that ensures them that this is a well thought-out and well-functioning game.
+
+
 ## Testing
 ****
 
