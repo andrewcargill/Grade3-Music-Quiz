@@ -27,7 +27,7 @@ let startGame = document.getElementById("start-game");
 startGame.addEventListener("click", function (event) {
   event.preventDefault();
   if (username.value.trim() == "") {
-    alert("please enter username");
+    alert("Please enter username");
   } else {
     window.localStorage.setItem("username", username.value);
     window.location.href = "game.html";
