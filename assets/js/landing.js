@@ -1,19 +1,20 @@
 
 let username = document.getElementById("username");
 let players_username = username.value;
+let textContainer = document.getElementById("text");
 
 
 /// start up
 
 document.addEventListener("DOMContentLoaded", function () {
    welcomeHTML();
+   buttonListeners();
    ///addListenersToButtons();
 });
 
 
 ///Welcome text
 function welcomeHTML() {
-   let textContainer = document.getElementById("text");
    textContainer.style.textAlign = "center";
    textContainer.innerHTML =`
    <p>
@@ -25,15 +26,27 @@ function welcomeHTML() {
    `;
 };
 
+function usernameWelcomeHTML() {
+   textContainer.style.textAlign = "center";
+   textContainer.innerHTML =`
+   <p>
+   You are in and your name is saved
+</p>
+   `;
+};
+
 
 
 /// Listeners
+function buttonListeners() {
 let startGame = document.getElementById("start-game");
 startGame.addEventListener("click", function() {
 
    window.localStorage.setItem("username", username.value);
    ///window.location.href = "game.html";
+   usernameWelcomeHTML();
     
 });
+};
 
 console.log('------------hello');
