@@ -27,10 +27,11 @@ function welcomeHTML() {
 };
 
 function usernameWelcomeHTML() {
+   let activeUser = localStorage.getItem("username");
    textContainer.style.textAlign = "center";
    textContainer.innerHTML =`
    <p>
-   You are in and your name is saved
+   Hi ${activeUser}
 </p>
    `;
 };
@@ -42,11 +43,12 @@ function buttonListeners() {
 let startGame = document.getElementById("start-game");
 startGame.addEventListener("click", function() {
 
-   window.localStorage.setItem("username", username.value);
-   ///window.location.href = "game.html";
+   //window.localStorage.setItem("username", username.value);
+   //window.location.href = "game.html";
    usernameWelcomeHTML();
     
 });
+
 };
 
 console.log('------------hello');
