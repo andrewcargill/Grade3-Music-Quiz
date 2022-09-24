@@ -48,6 +48,10 @@ h2 {
     margin-top: 0;
 }
 
+header p {
+    text-align: center;
+    text-transform: uppercase;
+}
 #question-score-container {
     text-align: center;
     color: aliceblue;
@@ -115,13 +119,16 @@ h2 {
     color: black;
 }
 
+#logout-container {
+    text-align: center;
+}
+
 #log-out-button {
     border-radius: 10px;
     font-size: larger;
     font-family: kallisto, sans-serif;
     font-weight: 800;
     font-style: normal;
-    visibility: hidden;
     padding: 5px;
     color: black;
 }
