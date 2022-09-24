@@ -12,6 +12,8 @@ body {
     background-color: white;
 }
 
+/* Main text container */
+
 #game-container {
     max-width: 800px;
     height: 95vh;

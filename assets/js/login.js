@@ -1,7 +1,7 @@
 let username = document.getElementById("username");
 let textContainer = document.getElementById("text");
 
-/// DOM Loading
+/// DOM Content Load
 document.addEventListener("DOMContentLoaded", function () {
   welcomeHTML();
 });
@@ -20,10 +20,10 @@ function welcomeHTML() {
 }
 
 const usernameStorage = localStorage.getItem("username");
-/// Listeners
 
 let startGame = document.getElementById("start-game");
 
+/// Start button
 startGame.addEventListener("click", function (event) {
   event.preventDefault();
   if (username.value.trim() == "") {
@@ -31,6 +31,5 @@ startGame.addEventListener("click", function (event) {
   } else {
     window.localStorage.setItem("username", username.value);
     window.location.href = "game.html";
-    //usernameWelcomeHTML();
   }
 });

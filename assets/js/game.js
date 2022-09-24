@@ -1,3 +1,6 @@
+/**
+ * Prevents game from running unless user has logged in
+ */
 let username = localStorage.getItem("username");
 if (!username) {
   window.location = "/index.html";
