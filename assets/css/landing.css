@@ -186,13 +186,15 @@ h2 {
 
     #text-display {
         width: 60vw;
+        height: 334px;
+
     }
     #true-false-container {
         width: 60vw;
     }
     .t-f-button {
-        height: 180px;
-        width: 180px;
+        height: 100px;
+        width: 100px;
     }
     }
 
@@ -210,7 +212,7 @@ h2 {
 
         #text-display {
             width: 437px;
-            height: 192px;
+            height: 370px;
 
         }
 
