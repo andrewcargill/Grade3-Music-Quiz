@@ -1,12 +1,9 @@
 
-///Username
+///Username from local storage
 let username = localStorage.getItem("username");
 
-
-
-
 /**
- * Controls the game and Question number display
+ * Controls the games current question and number display
  */
 const state = {
     endGame: false,
@@ -15,7 +12,7 @@ const state = {
 };
 
 /**
- * Questions for the game
+ * Questions to be used in the game
  */
 let questions = [{
         title: 'A guitar has 5 strings',
@@ -108,12 +105,14 @@ let questions = [{
     },
 ];
 
+/**
+ * Gives feedback to player in response to previous questions answer
+ */
 function previousQuestionUserFeedback() {
-    ///Players Name
-    
     /// Selects the previous question
     let previousQuestionNumber = state.questionNumber - 1;
     let previousQuestion = questions[previousQuestionNumber];
+
     /// Finds text-display HTML element
     let textDisplay = document.getElementById("text-display")
     
@@ -128,7 +127,7 @@ function previousQuestionUserFeedback() {
         textDisplay.style.borderColor = "red";
     }
     
-}
+};
 
 // https://sebhastian.com/fisher-yates-shuffle-javascript/
 // shuffles the 'questions' array
@@ -140,15 +139,12 @@ function fyShuffle(arr) {
         [arr[randIndex], arr[i]] = [arr[i], arr[randIndex]];
     }
     return arr;
-}
+};
 
-
-
-//Calls on questions to be shuffled
+//Calls on questions to be shuffled on start up
 let shuffledArray = fyShuffle(questions);
 
-
-/// On load up
+/// DOM load up
 document.addEventListener("DOMContentLoaded", function () {
     if(!username){
        window.location = '/index.html'
@@ -157,9 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
     addListenersToButtons();
 });
 
-
 /**
- * Updates HTML for each question and end of game
+ * Updates HTML with next question
  */
 function updateHtmlFromState() {
 
@@ -175,7 +170,7 @@ function updateHtmlFromState() {
         console.log("number is 0");
     }
 
-///When end of game is reached - score is displayed and play again button
+///When end of game is reached
     if (state.questionNumber === questions.length) {
         let playAgainButton = document.getElementById('play-again-button');
         playAgainButton.style.visibility = 'visible';
@@ -200,10 +195,10 @@ function updateHtmlFromState() {
         questionTextHTML.innerHTML =
         currentQuestion.title;
     }
-}
+};
 
 /**
- * Button listeners (True / False / Play Again)
+ * Button listeners (True / False / Play Again / Log Out)
  */
 function addListenersToButtons() {
 
@@ -231,15 +226,12 @@ function addListenersToButtons() {
         state.questionNumber = 0;
         state.scoreNumber = 1;
         fyShuffle(questions);
-        updateHtmlFromState();
-        
+        updateHtmlFromState();   
     });
-
-
-}
+};
 
 /**
- * Updates current questions values
+ * Updates values of current question
  */
 function updateState(playerAnswer) {
     let questionNumber = state.questionNumber;
@@ -252,4 +244,4 @@ function updateState(playerAnswer) {
     }
     state.questionNumber++;
     state.scoreNumber++;
-}
+};
