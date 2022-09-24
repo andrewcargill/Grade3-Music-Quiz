@@ -5,9 +5,9 @@ The target audience for this game are young people of 8-9 years old. The game wi
 
 The games design is fun, welcoming and purposefully simplistic. Using the energy of the crowd in the background image to spur the students along!
 
-The visual focus is the question text, and feeding back feedback to the user after each question is answered. This personal feedback helps the learner progress through the game and when they reach the end they are encouraged to try again. 
+The visual focus is the question text and feeding back to the user after each question. This personal feedback helps the learner progress through the game and when they reach the end they are encouraged to try again. 
 
-Each time the game is played the questions are presented in a new random order to keep the user engaged. 
+Each time the game is played the questions are presented in a new order to help keep the user engaged. 
 
 
 ![Website on various devices](/assets/images/readme_game.jpg)
@@ -75,9 +75,9 @@ The title of the game and the buttons use a font that is modern and energetic, w
 
 I had many challenges while completing this project. One was how to create a random order for the questions, I really felt it was important for the game to be something that the user would play more than once. I tried a few different ways - but then discovered shuffling the array and running through the index. Shuffling the array at the start of each game was an excellent solution and well worth two days of exploring. 
 
-With this project I decided at the start that the code was more important than the design. My wireframe was very simplistic and focused on learning javascript with the goal of getting a nice, simple and stable game completed. This method worked well, but as a person who really enjoys visual design, I really personally felt like the end game missed that bit of design spark. 
+With this project I decided at the start that the code was more important than the design. My wireframe was very simplistic and I focused on learning javascript and completing a nice, functional and stable game. This method worked well, but as a person who really thrives off visual design, I personally felt the end game missed that bit of design spark. 
 
-I would have loved to have enhanced the user feedback further through sounds and animation, but I understand that this is primarily a coding education and it is important that for my own learning I focus most of my project time on the coding languages. I feel this project has enabled me to become comfortable with Javascript and further refresh my HTML and CSS skills.
+I feel this project has enabled me to become comfortable with Javascript and further developed my HTML and CSS skills.
 
 There were various small bugs and fixes along the way, which are documented in the GitHub commit history.
 
