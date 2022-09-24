@@ -175,11 +175,8 @@ function updateHtmlFromState() {
   let questionNumberHTML = document.getElementById("question-num");
 
   if (questionNumber >= 1) {
-    console.log("number is above 0");
     previousQuestionUserFeedback();
-  } else {
-    console.log("number is 0");
-  }
+  } 
 
   ///When end of game is reached
   if (state.questionNumber === questions.length) {
@@ -233,7 +230,6 @@ function addListenersToButtons() {
   let buttonPlayAgain = document.getElementById("play-again-button");
   buttonPlayAgain.addEventListener("click", function () {
     buttonPlayAgain.style.visibility = "hidden";
-    buttonLogOut.style.visibility = "hidden";
     state.questionNumber = 0;
     state.scoreNumber = 1;
     fyShuffle(questions);
